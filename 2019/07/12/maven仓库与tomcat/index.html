@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Maven 软件的安装 | Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Maven 软件的安装 | Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Maven 软件的安装Apache-maven-3.5.2 下载地址：http://archive.apache.org/dist/maven/maven-3/ Maven 下载后，将 Maven 解压到一个没有中文没有空格的路径下，比如 D:\software\maven 下面。解压后目录结构如下： 12345bin:存放了 maven 的命令，比如我们前面用到的 mvn tomcat:runb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven 软件的安装">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/maven仓库与tomcat/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Maven 软件的安装Apache-maven-3.5.2 下载地址：http://archive.apache.org/dist/maven/maven-3/ Maven 下载后，将 Maven 解压到一个没有中文没有空格的路径下，比如 D:\software\maven 下面。解压后目录结构如下： 12345bin:存放了 maven 的命令，比如我们前面用到的 mvn tomcat:runb">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542103258044.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104112703.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104333475.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104391221.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104499125.png">
+<meta property="og:updated_time" content="2019-07-12T14:35:10.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Maven 软件的安装">
+<meta name="twitter:description" content="Maven 软件的安装Apache-maven-3.5.2 下载地址：http://archive.apache.org/dist/maven/maven-3/ Maven 下载后，将 Maven 解压到一个没有中文没有空格的路径下，比如 D:\software\maven 下面。解压后目录结构如下： 12345bin:存放了 maven 的命令，比如我们前面用到的 mvn tomcat:runb">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542103258044.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg">
+</a>
+<div class="author">
+    <span>John Doe</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"/>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(9)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="9">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a class="" href="/2019/02/15/vmware安装与激活/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 01:00:49">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/Java日志文件的八个级别/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 00:54:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/hello-world/" data-tag="" data-author="">
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-02-15 00:37:47">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/Vue/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 00:54:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/hello/" data-tag="" data-author="">
+            <span class="post-title" title="hello">hello</span>
+            <span class="post-date" title="2019-02-15 01:02:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/idea环境配置/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 01:00:49">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/07/12/maven仓库与tomcat/" data-tag="" data-author="">
+            <span class="post-title" title="Maven 软件的安装">Maven 软件的安装</span>
+            <span class="post-date" title="2019-07-12 22:29:09">2019/07/12</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/nodeJS/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 00:54:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/07/12/小兵/" data-tag="" data-author="">
+            <span class="post-title" title="小兵">小兵</span>
+            <span class="post-date" title="2019-07-12 22:29:09">2019/07/12</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-maven仓库与tomcat" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+        <h1 class="article-title">Maven 软件的安装</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2019-07-12 22:35:10">2019-07-12 22:29</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Maven-软件的安装"><span class="toc-text">Maven 软件的安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-及-JDK-配置"><span class="toc-text">Maven 及 JDK 配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-软件版本测试"><span class="toc-text">Maven 软件版本测试</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven-仓库的分类"><span class="toc-text">Maven 仓库的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Maven-本地仓库的配置"><span class="toc-text">Maven 本地仓库的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#全局-setting-与用户-setting"><span class="toc-text">全局 setting 与用户 setting</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#idea-的-maven-配置"><span class="toc-text">idea 的 maven 配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#坐标的来源方式"><span class="toc-text">坐标的来源方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖范围"><span class="toc-text">依赖范围</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#TOMCAT"><span class="toc-text">TOMCAT</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Maven-软件的安装"><a href="#Maven-软件的安装" class="headerlink" title="Maven 软件的安装"></a>Maven 软件的安装</h1><p>Apache-maven-3.5.2 下载地址：<a href="http://archive.apache.org/dist/maven/maven-3/" target="_blank" rel="noopener">http://archive.apache.org/dist/maven/maven-3/</a></p>
+<p>Maven 下载后，将 Maven 解压到一个没有中文没有空格的路径下，比如 D:\software\maven 下面。<br>解压后目录结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">bin:存放了 maven 的命令，比如我们前面用到的 mvn tomcat:run</span><br><span class="line">boot:存放了一些 maven 本身的引导程序，如类加载器等</span><br><span class="line">conf:存放了 maven 的一些配置文件，如 setting.xml 文件</span><br><span class="line">lib:存放了 maven 本身运行所需的一些 jar 包</span><br><span class="line">至此我们的 maven 软件就可以使用了，前提是你的电脑上之前已经安装并配置好了 JDK。</span><br></pre></td></tr></table></figure>
+<h2 id="Maven-及-JDK-配置"><a href="#Maven-及-JDK-配置" class="headerlink" title="Maven 及 JDK 配置"></a>Maven 及 JDK 配置</h2><p>配置 MAVEN_HOME ，变量值就是你的 maven 安装 的路径（bin 目录之前一级目录）</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542103258044.png" alt="1542103258044"></p>
+<p>同时不要忘记在Path中添加环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%MAVEN_HOME%\bin</span><br></pre></td></tr></table></figure>
+<h2 id="Maven-软件版本测试"><a href="#Maven-软件版本测试" class="headerlink" title="Maven 软件版本测试"></a>Maven 软件版本测试</h2><p>通过命令行 mvn -v命令检查 maven 是否安装成功，看到 maven 的版本为 3.5.2 及 java 版本为 1.8 即为安装成功。</p>
+<h2 id="Maven-仓库的分类"><a href="#Maven-仓库的分类" class="headerlink" title="Maven 仓库的分类"></a>Maven 仓库的分类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">本地仓库 ：用来存储从远程仓库或中央仓库下载的插件和 jar 包，项目使用一些插件或 jar 包，</span><br><span class="line">优先从本地仓库查找</span><br><span class="line">默认本地仓库位置在 $&#123;user.dir&#125;/.m2/repository，$&#123;user.dir&#125;表示 windows 用户目录。</span><br><span class="line"></span><br><span class="line">远程仓库：如果本地需要插件或者 jar 包，本地仓库没有，默认去远程仓库下载。</span><br><span class="line">远程仓库可以在互联网内也可以在局域网内。</span><br><span class="line"></span><br><span class="line">中央仓库 ：在 maven 软件中内置一个远程仓库地址 http://repo1.maven.org/maven2 ，它是中央仓库，服务于整个互联网，它是由 Maven 团队自己维护，里面存储了非常全的 jar 包，它包</span><br><span class="line">含了世界上大部分流行的开源项目构件</span><br></pre></td></tr></table></figure>
+<h3 id="Maven-本地仓库的配置"><a href="#Maven-本地仓库的配置" class="headerlink" title="Maven 本地仓库的配置"></a>Maven 本地仓库的配置</h3><p>将已下载本地仓库 “repository.rar”解压至自己的电脑上，我们解压在 D:\repository 目录下（可以放在没有中文及空格的目录下）。</p>
+<p>在 MAVE_HOME/conf/settings.xml 文件中配置本地仓库位置（maven 的安装目录下）<br>打开 settings.xml文件，配置如下：</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542104112703.png" alt="1542104112703"></p>
+<h3 id="全局-setting-与用户-setting"><a href="#全局-setting-与用户-setting" class="headerlink" title="全局 setting 与用户 setting"></a>全局 setting 与用户 setting</h3><p>maven 仓库地址、私服等配置信息需要在 setting.xml 文件中配置，分为全局配置和用户配置。<br>在 maven 安装目录下的有 <strong>conf/setting.xml</strong> 文件，此 setting.xml 文件用于 maven 的所有 project<br>项目，它作为 maven 的全局配置。<br>如需要个性配置则需要在用户配置中设置，用户配置的 setting.xml 文件默认的位置在：<strong>${user.dir}</strong><br><strong>/.m2/settings.xml</strong> 目录中,${user.dir} 指 windows 中的用户目录。<br>maven 会先找用户配置，如果找到则以用户配置文件为准，否则使用全局配置文件</p>
+<h1 id="idea-的-maven-配置"><a href="#idea-的-maven-配置" class="headerlink" title="idea 的 maven 配置"></a>idea 的 maven 配置</h1><p>打开File&gt;Settings 配置 maven<br>选择本地 maven 安装目录，指定 maven 安装目录下 conf 文件夹中 settings 配置文件。</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542104333475.png" alt="1542104333475"></p>
+<p>创建项目时这些不用改</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542104391221.png" alt="1542104391221"></p>
+<h2 id="坐标的来源方式"><a href="#坐标的来源方式" class="headerlink" title="坐标的来源方式"></a>坐标的来源方式</h2><p>从互联网搜索<br><a href="http://search.maven.org/" target="_blank" rel="noopener">http://search.maven.org/</a><br><a href="http://mvnrepository.com/" target="_blank" rel="noopener">http://mvnrepository.com/</a></p>
+<h3 id="依赖范围"><a href="#依赖范围" class="headerlink" title="依赖范围"></a>依赖范围</h3><p>compile：编译范围，指 A 在编译时依赖 B，此范围为默认依赖范围。编译范围的依赖会用在<br>编译、测试、运行，由于运行时需要所以编译范围的依赖会被打包。<br> provided：provided 依赖只有在当 JDK 或者一个容器已提供该依赖之后才使用， provided 依<br>赖在编译和测试时需要，在运行时不需要，比如：servlet api 被 tomcat 容器提供。<br> runtime：runtime 依赖在运行和测试系统的时候需要，但在编译的时候不需要。比如：jdbc<br>的驱动包。由于运行时需要所以 runtime 范围的依赖会被打包。<br> test：test 范围依赖 在编译和运行时都不需要，它们只有在测试编译和测试运行阶段可用，<br>比如：junit。由于运行时不需要所以 test范围依赖不会被打包。</p>
+<p> system：system 范围依赖与 provided 类似，但是你必须显式的提供一个对于本地系统中 JAR<br>文件的路径，需要指定 systemPath 磁盘路径，system依赖不推荐使用。</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542104499125.png" alt="1542104499125"></p>
+<h1 id="TOMCAT"><a href="#TOMCAT" class="headerlink" title="TOMCAT"></a>TOMCAT</h1><p>解压即可使用，配置文件在D:\apache-tomcat\apache-tomcat-8.5.31\conf中</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>Maven 软件的安装</p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John Doe">John Doe</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-07-12, 22:29:09</p>
+    <p><span class="copy-title">最后更新:</span>2019-07-12, 22:35:10</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/07/12/maven仓库与tomcat/" title="Maven 软件的安装">http://yoursite.com/2019/07/12/maven仓库与tomcat/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("http://img.xiangzhangshugongyi.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

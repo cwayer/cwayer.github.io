@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Maven 软件的安装Apache-maven-3.5.2 下载地址：http://archive.apache.org/dist/maven/maven-3/ Maven 下载后，将 Maven 解压到一个没有中文没有空格的路径下，比如 D:\software\maven 下面。解压后目录结构如下： 12345bin:存放了 maven 的命令，比如我们前面用到的 mvn tomcat:runb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven 软件的安装">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/maven仓库与tomcat/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Maven 软件的安装Apache-maven-3.5.2 下载地址：http://archive.apache.org/dist/maven/maven-3/ Maven 下载后，将 Maven 解压到一个没有中文没有空格的路径下，比如 D:\software\maven 下面。解压后目录结构如下： 12345bin:存放了 maven 的命令，比如我们前面用到的 mvn tomcat:runb">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542103258044.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104112703.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104333475.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104391221.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104499125.png">
+<meta property="og:updated_time" content="2019-07-12T14:35:10.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Maven 软件的安装">
+<meta name="twitter:description" content="Maven 软件的安装Apache-maven-3.5.2 下载地址：http://archive.apache.org/dist/maven/maven-3/ Maven 下载后，将 Maven 解压到一个没有中文没有空格的路径下，比如 D:\software\maven 下面。解压后目录结构如下： 12345bin:存放了 maven 的命令，比如我们前面用到的 mvn tomcat:runb">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542103258044.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg">
+</a>
+<div class="author">
+    <span>John Doe</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"/>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(9)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="9">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a class="" href="/2019/02/15/vmware安装与激活/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 01:00:49">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/Java日志文件的八个级别/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 00:54:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/hello-world/" data-tag="" data-author="">
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-02-15 00:37:47">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/Vue/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 00:54:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/hello/" data-tag="" data-author="">
+            <span class="post-title" title="hello">hello</span>
+            <span class="post-date" title="2019-02-15 01:02:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/idea环境配置/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 01:00:49">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/07/12/maven仓库与tomcat/" data-tag="" data-author="">
+            <span class="post-title" title="Maven 软件的安装">Maven 软件的安装</span>
+            <span class="post-date" title="2019-07-12 22:29:09">2019/07/12</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/nodeJS/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 00:54:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/07/12/小兵/" data-tag="" data-author="">
+            <span class="post-title" title="小兵">小兵</span>
+            <span class="post-date" title="2019-07-12 22:29:09">2019/07/12</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-nodeJS" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2018-11-12 19:52:19">2019-02-15 00:54</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第1章-NodeJS"><span class="toc-text">第1章 NodeJS</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-学习目标："><span class="toc-text">1 学习目标：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Node-js"><span class="toc-text">2  Node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-什么是Node-js"><span class="toc-text">2.1 什么是Node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-Node-js安装"><span class="toc-text">2.2 Node.js安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-快速入门"><span class="toc-text">2.3 快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-1-控制台输出"><span class="toc-text">2.3.1 控制台输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-2-使用函数"><span class="toc-text">2.3.2 使用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-3-模块化编程"><span class="toc-text">2.3.3 模块化编程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-4-创建web服务器"><span class="toc-text">2.3.4 创建web服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-5-理解服务端渲染"><span class="toc-text">2.3.5 理解服务端渲染</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-6-接收参数"><span class="toc-text">2.3.6 接收参数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-包资源管理器NPM"><span class="toc-text">3 包资源管理器NPM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-什么是NPM"><span class="toc-text">3.1 什么是NPM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-NPM命令"><span class="toc-text">3.2 NPM命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-初始化工程"><span class="toc-text">3.2.1 初始化工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-本地安装"><span class="toc-text">3.2.2 本地安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-全局安装"><span class="toc-text">3.2.3 全局安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-4-批量下载"><span class="toc-text">3.2.4 批量下载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-5淘宝NPM镜像【建议使用】"><span class="toc-text">3.2.5淘宝NPM镜像【建议使用】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-6-运行工程"><span class="toc-text">3.2.6 运行工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-7-编译工程"><span class="toc-text">3.2.7 编译工程</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#4-Webpack"><span class="toc-text">4 Webpack</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#4-1-什么是Webpack"><span class="toc-text">4.1 什么是Webpack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-2-Webpack安装"><span class="toc-text">4.2 Webpack安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-3-快速入门"><span class="toc-text">4.3 快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-1-JS打包"><span class="toc-text">4.3.1  JS打包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-2-CSS打包"><span class="toc-text">4.3.2 CSS打包</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#5-ES6"><span class="toc-text">5 ES6</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-1-什么是ES6"><span class="toc-text">5.1 什么是ES6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-2-Node-js中使用ES6"><span class="toc-text">5.2 Node.js中使用ES6</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-3-语法新特性"><span class="toc-text">5.3 语法新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-1-变量声明let【重要】"><span class="toc-text">5.3.1 变量声明let【重要】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-2-常量声明"><span class="toc-text">5.3.2 常量声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-3-模板字符串"><span class="toc-text">5.3.3 模板字符串</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-4-函数默认参数"><span class="toc-text">5.3.4 函数默认参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-5-箭头函数【重点】"><span class="toc-text">5.3.5 箭头函数【重点】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-6-对象初始化简写"><span class="toc-text">5.3.6 对象初始化简写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-7-解构"><span class="toc-text">5.3.7 解构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-8-Spread-Operator"><span class="toc-text">5.3.8 Spread Operator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-9-import-和-export【重点】"><span class="toc-text">5.3.9 import 和 export【重点】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-10-Promise（自学内容）"><span class="toc-text">5.3.10 Promise（自学内容）</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第1章-NodeJS"><a href="#第1章-NodeJS" class="headerlink" title="第1章 NodeJS"></a>第1章 NodeJS</h1><h1 id="1-学习目标："><a href="#1-学习目标：" class="headerlink" title="1 学习目标："></a>1 学习目标：</h1><ul>
+<li>掌握Node.js基本使用方法，理解模块化编程</li>
+<li>掌握包资源管理器NPM的使用</li>
+<li>说出webpack的作用</li>
+<li>掌握ES6常用的新特性语法</li>
+</ul>
+<h1 id="2-Node-js"><a href="#2-Node-js" class="headerlink" title="2  Node.js"></a>2  Node.js</h1><h2 id="2-1-什么是Node-js"><a href="#2-1-什么是Node-js" class="headerlink" title="2.1 什么是Node.js"></a>2.1 什么是Node.js</h2><p>简单的说 Node.js 就是运行在服务端的 JavaScript。</p>
+<p>Node.js 是一个基于Chrome JavaScript 运行时建立的一个平台。</p>
+<p>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。</p>
+<h2 id="2-2-Node-js安装"><a href="#2-2-Node-js安装" class="headerlink" title="2.2 Node.js安装"></a>2.2 Node.js安装</h2><p>1、下载对应你系统的Node.js版本:</p>
+<p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a></p>
+<p>（我们现在使用的版本是v9.4.0，资源中也已提供）<br>2、选安装目录进行安装</p>
+<p>默认即可</p>
+<p>3.测试</p>
+<p>在命令提示符下输入命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br></pre></td></tr></table></figure>
+<p>会显示当前node的版本</p>
+<h2 id="2-3-快速入门"><a href="#2-3-快速入门" class="headerlink" title="2.3 快速入门"></a>2.3 快速入门</h2><h3 id="2-3-1-控制台输出"><a href="#2-3-1-控制台输出" class="headerlink" title="2.3.1 控制台输出"></a>2.3.1 控制台输出</h3><p>我们现在做个最简单的小例子，演示如何在控制台输出，创建文本文件demo1.js,代码内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a=<span class="number">1</span>;</span><br><span class="line"><span class="keyword">var</span> b=<span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a+b);</span><br></pre></td></tr></table></figure>
+<p>我们在命令提示符下输入命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node demo1.js</span><br></pre></td></tr></table></figure>
+<h3 id="2-3-2-使用函数"><a href="#2-3-2-使用函数" class="headerlink" title="2.3.2 使用函数"></a>2.3.2 使用函数</h3><p>创建文本文件demo2.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> c=add(<span class="number">100</span>,<span class="number">200</span>);</span><br><span class="line"><span class="built_in">console</span>.log(c);</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>命令提示符输入命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node demo2.js</span><br></pre></td></tr></table></figure>
+<p>运行后看到输出结果为300</p>
+<h3 id="2-3-3-模块化编程"><a href="#2-3-3-模块化编程" class="headerlink" title="2.3.3 模块化编程"></a>2.3.3 模块化编程</h3><p>创建文本文件demo3_1.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.add=<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建文本文件demo3_2.js，3.1赋值给demo然后直接调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> demo= <span class="built_in">require</span>(<span class="string">'./demo3_1'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(demo.add(<span class="number">400</span>,<span class="number">600</span>));</span><br></pre></td></tr></table></figure>
+<p>我们在命令提示符下输入命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node demo3_2.js</span><br></pre></td></tr></table></figure>
+<p>结果为1000</p>
+<h3 id="2-3-4-创建web服务器"><a href="#2-3-4-创建web服务器" class="headerlink" title="2.3.4 创建web服务器"></a>2.3.4 创建web服务器</h3><p>创建文本文件demo4.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 发送 HTTP 头部 </span></span><br><span class="line">    <span class="comment">// HTTP 状态值: 200 : OK</span></span><br><span class="line">    <span class="comment">// 内容类型: text/plain</span></span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">    <span class="comment">// 发送响应数据 "Hello World"</span></span><br><span class="line">    response.end(<span class="string">'Hello World\n'</span>);</span><br><span class="line">&#125;).listen(<span class="number">8888</span>);</span><br><span class="line"><span class="comment">// 终端打印如下信息</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8888/'</span>);</span><br></pre></td></tr></table></figure>
+<p>http为node内置的web模块</p>
+<p>我们在命令提示符下输入命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node demo4.js</span><br></pre></td></tr></table></figure>
+<p>服务启动后，我们打开浏览器，输入网址</p>
+<p><a href="http://localhost:8888/" target="_blank" rel="noopener">http://localhost:8888/</a></p>
+<p>即可看到网页输出结果Hello World</p>
+<p>心情是不是很激动呢？Ctrl+c 终止运行。</p>
+<h3 id="2-3-5-理解服务端渲染"><a href="#2-3-5-理解服务端渲染" class="headerlink" title="2.3.5 理解服务端渲染"></a>2.3.5 理解服务端渲染</h3><p>我们创建demo5.js  ，将上边的例子写成循环的形式</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span> (<span class="params">request, response</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 发送 HTTP 头部 </span></span><br><span class="line">    <span class="comment">// HTTP 状态值: 200 : OK</span></span><br><span class="line">    <span class="comment">// 内容类型: text/plain</span></span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">    <span class="comment">// 发送响应数据 "Hello World"</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">		response.write(<span class="string">'Hello World\n'</span>);</span><br><span class="line">	&#125;  </span><br><span class="line">	response.end(<span class="string">''</span>);	</span><br><span class="line">&#125;).listen(<span class="number">8888</span>);</span><br><span class="line"><span class="comment">// 终端打印如下信息</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8888/'</span>);</span><br></pre></td></tr></table></figure>
+<p>我们在命令提示符下输入命令启动服务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node demo5.js</span><br></pre></td></tr></table></figure>
+<p>浏览器地址栏输入<a href="http://127.0.0.1:8888即可看到查询结果。" target="_blank" rel="noopener">http://127.0.0.1:8888即可看到查询结果。</a></p>
+<p>我们右键“查看源代码”发现，并没有我们写的for循环语句，而是直接的10条Hello World ，这就说明这个循环是在服务端完成的，而非浏览器（客户端）来完成。这与我们原来的JSP很是相似。</p>
+<h3 id="2-3-6-接收参数"><a href="#2-3-6-接收参数" class="headerlink" title="2.3.6 接收参数"></a>2.3.6 接收参数</h3><p>创建demo6.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> http = <span class="built_in">require</span>(<span class="string">'http'</span>);</span><br><span class="line"><span class="keyword">var</span> url = <span class="built_in">require</span>(<span class="string">'url'</span>);</span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">'Content-Type'</span>: <span class="string">'text/plain'</span>&#125;);</span><br><span class="line">    <span class="comment">// 解析 url 参数</span></span><br><span class="line">    <span class="keyword">var</span> params = url.parse(request.url, <span class="literal">true</span>).query;</span><br><span class="line">    response.write(<span class="string">"name:"</span> + params.name);</span><br><span class="line">    response.write(<span class="string">"\n"</span>);</span><br><span class="line">    response.end();</span><br><span class="line">&#125;).listen(<span class="number">8888</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Server running at http://127.0.0.1:8888/'</span>);</span><br></pre></td></tr></table></figure>
+<p>我们在命令提示符下输入命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node demo6.js</span><br></pre></td></tr></table></figure>
+<p>在浏览器测试结果</p>
+<h1 id="3-包资源管理器NPM"><a href="#3-包资源管理器NPM" class="headerlink" title="3 包资源管理器NPM"></a>3 包资源管理器NPM</h1><h2 id="3-1-什么是NPM"><a href="#3-1-什么是NPM" class="headerlink" title="3.1 什么是NPM"></a>3.1 什么是NPM</h2><p>npm全称Node Package Manager，他是node包管理和分发工具。其实我们可以把NPM理解为前端的Maven </p>
+<p>我们通过npm 可以很方便地下载js库，管理前端工程.</p>
+<p>最新版本的node.js已经集成了npm工具，在命令提示符输入 npm -v 可查看当前npm版本</p>
+<h2 id="3-2-NPM命令"><a href="#3-2-NPM命令" class="headerlink" title="3.2 NPM命令"></a>3.2 NPM命令</h2><h3 id="3-2-1-初始化工程"><a href="#3-2-1-初始化工程" class="headerlink" title="3.2.1 初始化工程"></a>3.2.1 初始化工程</h3><p>init命令是工程初始化命令。</p>
+<p>建立一个空文件夹，在命令提示符进入该文件夹  执行命令初始化</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+<p>按照提示输入相关信息，如果是用默认值则直接回车即可。</p>
+<p>name: 项目名称</p>
+<p>version: 项目版本号</p>
+<p>description: 项目描述</p>
+<p>keywords: {Array}关键词，便于用户搜索到我们的项目</p>
+<p>最后会生成package.json文件，这个是包的配置文件，相当于maven的pom.xml</p>
+<p>我们之后也可以根据需要进行修改。</p>
+<h3 id="3-2-2-本地安装"><a href="#3-2-2-本地安装" class="headerlink" title="3.2.2 本地安装"></a>3.2.2 本地安装</h3><p>install命令用于安装某个模块，如果我们想安装express模块（node的web框架），输出命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express</span><br></pre></td></tr></table></figure>
+<p>出现黄色的是警告信息，可以忽略，请放心，你已经成功执行了该命令。</p>
+<p>在该目录下已经出现了一个node_modules文件夹 和package-lock.json</p>
+<p>node_modules文件夹用于存放下载的js库（相当于maven的本地仓库）</p>
+<p>package-lock.json是当 node_modules 或 package.json 发生变化时自动生成的文件。这个文件主要功能是确定当前安装的包的依赖，以便后续重新安装的时候生成相同的依赖，而忽略项目开发过程中有些依赖已经发生的更新。</p>
+<p>我们再打开package.json文件，发现刚才下载的express已经添加到依赖列表中了.</p>
+<p>关于版本号定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">指定版本：比如1.2.2，遵循“大版本.次要版本.小版本”的格式规定，安装时只安装指定版本。</span><br><span class="line"></span><br><span class="line">波浪号（tilde）+指定版本：比如~1.2.2，表示安装1.2.x的最新版本（不低于1.2.2），但是不安装1.3.x，也就是说安装时不改变大版本号和次要版本号。</span><br><span class="line"></span><br><span class="line">插入号（caret）+指定版本：比如ˆ1.2.2，表示安装1.x.x的最新版本（不低于1.2.2），但是不安装2.x.x，也就是说安装时不改变大版本号。需要注意的是，如果大版本号为0，则插入号的行为与波浪号相同，这是因为此时处于开发阶段，即使是次要版本号变动，也可能带来程序的不兼容。</span><br><span class="line"></span><br><span class="line">latest：安装最新版本。</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-3-全局安装"><a href="#3-2-3-全局安装" class="headerlink" title="3.2.3 全局安装"></a>3.2.3 全局安装</h3><p>刚才我们使用的是本地安装，会将js库安装在当前目录，而使用全局安装会将库安装到你的全局目录下。</p>
+<p>如果你不知道你的全局目录在哪里，执行命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm root -g</span><br></pre></td></tr></table></figure>
+<p>我的全局目录在</p>
+<p>C:\Users\Administrator\AppData\Roaming\npm\node_modules</p>
+<p>比如我们全局安装jquery,  输入以下命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jquery -g</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-4-批量下载"><a href="#3-2-4-批量下载" class="headerlink" title="3.2.4 批量下载"></a>3.2.4 批量下载</h3><p>我们从网上下载某些代码，发现只有package.json,没有node_modules文件夹，这时我们需要通过命令重新下载这些js库.</p>
+<p>进入目录（package.json所在的目录）输入命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>此时，npm会自动下载package.json中依赖的js库.</p>
+<h3 id="3-2-5淘宝NPM镜像【建议使用】"><a href="#3-2-5淘宝NPM镜像【建议使用】" class="headerlink" title="3.2.5淘宝NPM镜像【建议使用】"></a>3.2.5淘宝NPM镜像【建议使用】</h3><p>有时我们使用npm下载资源会很慢，所以我们可以安装一个cnmp(淘宝镜像)来加快下载速度。</p>
+<p>输入命令，进行全局安装淘宝镜像。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+<p>安装后，我们可以使用以下命令来查看cnpm的版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm -v</span><br></pre></td></tr></table></figure>
+<p>使用cnpm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install 需要下载的js库</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-6-运行工程"><a href="#3-2-6-运行工程" class="headerlink" title="3.2.6 运行工程"></a>3.2.6 运行工程</h3><p>如果我们想运行某个工程，则使用run命令</p>
+<p>如果package.json中定义的脚本如下</p>
+<p>dev是开发阶段测试运行</p>
+<p>build是构建编译工程</p>
+<p>lint 是运行js代码检测 </p>
+<p>我们现在来试一下运行dev</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run dev</span><br></pre></td></tr></table></figure>
+<h3 id="3-2-7-编译工程"><a href="#3-2-7-编译工程" class="headerlink" title="3.2.7 编译工程"></a>3.2.7 编译工程</h3><p>我们接下来，测试一个代码的编译.编译后我们就可以将工程部署到nginx中啦~</p>
+<p>编译后的代码会放在dist文件夹中，首先我们先删除dist文件夹中的文件,进入命令提示符输入命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<p>生成后我们会发现只有个静态页面，和一个static文件夹</p>
+<p>这种工程我们称之为单页Web应用（single page web application，SPA），就是只有一张Web页面的应用，是加载单个HTML 页面并在用户与应用程序交互时动态更新该页面的Web应用程序。</p>
+<p>这里其实是调用了webpack来实现打包的，关于webpack我们后续的章节进行介绍</p>
+<h1 id="4-Webpack"><a href="#4-Webpack" class="headerlink" title="4 Webpack"></a>4 Webpack</h1><h2 id="4-1-什么是Webpack"><a href="#4-1-什么是Webpack" class="headerlink" title="4.1 什么是Webpack"></a>4.1 什么是Webpack</h2><p>​    Webpack 是一个前端资源加载/打包工具。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</p>
+<p><img src="assets/1-1.jpg" alt=""> </p>
+<p>​    从图中我们可以看出，Webpack 可以将多种静态资源 js、css、less 转换成一个静态文件，减少了页面的请求。  接下来我们简单为大家介绍 Webpack 的安装与使用</p>
+<h2 id="4-2-Webpack安装"><a href="#4-2-Webpack安装" class="headerlink" title="4.2 Webpack安装"></a>4.2 Webpack安装</h2><p>全局安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack -g</span><br><span class="line">npm install webpack-cli -g</span><br></pre></td></tr></table></figure>
+<p>安装后查看版本号</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack -v</span><br></pre></td></tr></table></figure>
+<h2 id="4-3-快速入门"><a href="#4-3-快速入门" class="headerlink" title="4.3 快速入门"></a>4.3 快速入门</h2><h3 id="4-3-1-JS打包"><a href="#4-3-1-JS打包" class="headerlink" title="4.3.1  JS打包"></a>4.3.1  JS打包</h3><p>（1）创建src文件夹，创建bar.js</p>
+<p>传入什么输出什么</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.info=<span class="function"><span class="keyword">function</span>(<span class="params">str</span>)</span>&#123;</span><br><span class="line">   <span class="built_in">document</span>.write(str);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）src下创建logic.js</p>
+<p>计算两数字之和</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">exports.add=<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（3）src下创建main.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> bar= <span class="built_in">require</span>(<span class="string">'./bar'</span>);</span><br><span class="line"><span class="keyword">var</span> logic= <span class="built_in">require</span>(<span class="string">'./logic'</span>);</span><br><span class="line">bar.info( <span class="string">'Hello world!'</span>+ logic.add(<span class="number">100</span>,<span class="number">200</span>));</span><br></pre></td></tr></table></figure>
+<p>（4）创建配置文件webpack.config.js  ，该文件与<strong>src处于同级目录</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">	entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">	output: &#123;</span><br><span class="line">		path: path.resolve(__dirname, <span class="string">'./dist'</span>),</span><br><span class="line">		filename: <span class="string">'bundle.js'</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>以上代码的意思是：读取当前目录下src文件夹中的main.js（入口文件）内容，把对应的js文件打包，打包后的文件放入当前目录的dist文件夹下，打包后的js文件名为bundle.js</p>
+<p>（5）执行编译命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack</span><br></pre></td></tr></table></figure>
+<p>执行后查看bundle.js 会发现里面包含了上面两个js文件的内容</p>
+<p>（7）创建index.html ,引用bundle.js</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!doctype html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span>  </span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span>   </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"dist/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>测试调用index.html，会发现有内容输出</p>
+<h3 id="4-3-2-CSS打包"><a href="#4-3-2-CSS打包" class="headerlink" title="4.3.2 CSS打包"></a>4.3.2 CSS打包</h3><p>（1）安装style-loader和 css-loader</p>
+<p>Webpack 本身只能处理 JavaScript 模块，如果要处理其他类型的文件，就需要使用 loader 进行转换。</p>
+<p>Loader 可以理解为是模块和资源的转换器，它本身是一个函数，接受源文件作为参数，返回转换的结果。这样，我们就可以通过 require 来加载任何类型的模块或文件，比如 CoffeeScript、 JSX、 LESS 或图片。首先我们需要安装相关Loader插件，css-loader 是将 css 装载到 javascript；style-loader 是让 javascript 认识css</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install style-loader css-loader --save-dev</span><br></pre></td></tr></table></figure>
+<p>（2）修改webpack.config.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">	entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">	output: &#123;</span><br><span class="line">		path: path.resolve(__dirname, <span class="string">'./dist'</span>),</span><br><span class="line">		filename: <span class="string">'bundle.js'</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="built_in">module</span>: &#123;</span><br><span class="line">		rules: [  </span><br><span class="line">            &#123;  </span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,  </span><br><span class="line">                use: [<span class="string">'style-loader'</span>, <span class="string">'css-loader'</span>]</span><br><span class="line">            &#125;  </span><br><span class="line">        ]  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>（3）在src文件夹创建css文件夹,css文件夹下创建css1</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span>&#123;</span><br><span class="line"> <span class="attribute">background</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（4）修改main.js ，引入css1.css</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(&apos;./css1.css&apos;);</span><br></pre></td></tr></table></figure>
+<p>（5）重新运行webpack</p>
+<p>（6）运行index.html看看背景是不是变成红色啦？</p>
+<h1 id="5-ES6"><a href="#5-ES6" class="headerlink" title="5 ES6"></a>5 ES6</h1><h2 id="5-1-什么是ES6"><a href="#5-1-什么是ES6" class="headerlink" title="5.1 什么是ES6"></a>5.1 什么是ES6</h2><p>编程语言JavaScript是ECMAScript的实现和扩展 。ECMAScript是由ECMA（一个类似W3C的标准组织）参与进行标准化的语法规范。ECMAScript定义了：</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar" target="_blank" rel="noopener">语言语法</a> – 语法解析规则、关键字、语句、声明、运算符等。</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures" target="_blank" rel="noopener">类型</a> – 布尔型、数字、字符串、对象等。</p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain" target="_blank" rel="noopener">原型和继承</a></p>
+<p>内建对象和函数的<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects" target="_blank" rel="noopener">标准库</a> – <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="noopener">JSON</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math" target="_blank" rel="noopener">Math</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="noopener">数组方法</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object" target="_blank" rel="noopener">对象自省方法</a>等。</p>
+<p>ECMAScript标准不定义HTML或CSS的相关功能，也不定义类似DOM（文档对象模型）的<a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank" rel="noopener">Web API</a>，这些都在独立的标准中进行定义。ECMAScript涵盖了各种环境中JS的使用场景，无论是浏览器环境还是类似<a href="http://nodejs.org/" target="_blank" rel="noopener">node.js</a>的非浏览器环境。</p>
+<p>ECMAScript标准的历史版本分别是1、2、3、5。</p>
+<p>那么为什么没有第4版？其实，在过去确实曾计划发布提出巨量新特性的第4版，但最终却因想法太过激进而惨遭废除（这一版标准中曾经有一个极其复杂的支持泛型和类型推断的内建静态类型系统）。</p>
+<p>ES4饱受争议，当标准委员会最终停止开发ES4时，其成员同意发布一个相对谦和的ES5版本，随后继续制定一些更具实质性的新特性。这一明确的协商协议最终命名为“Harmony”，因此，ES5规范中包含这样两句话</p>
+<blockquote>
+<p>ECMAScript是一门充满活力的语言，并在不断进化中。</p>
+<p>未来版本的规范中将持续进行重要的技术改进</p>
+</blockquote>
+<p>2009年发布的改进版本ES5，引入了<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="noopener">Object.create()</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener">Object.defineProperty()</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get" target="_blank" rel="noopener">getters</a>和<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set" target="_blank" rel="noopener">setters</a>、<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">严格模式</a>以及<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="noopener">JSON</a>对象。</p>
+<p>ECMAScript 6.0（以下简称ES6）是JavaScript语言的下一代标准，2015年6月正式发布。它的目标，是使得JavaScript语言可以用来编写复杂的大型应用程序，成为企业级开发语言。</p>
+<h2 id="5-2-Node-js中使用ES6"><a href="#5-2-Node-js中使用ES6" class="headerlink" title="5.2 Node.js中使用ES6"></a>5.2 Node.js中使用ES6</h2><p>ES6+ 太棒了,但是很多高级功能node是不支持的,就需要使用babel转换成ES5</p>
+<p> （1）babel转换配置,项目根目录添加.babelrc 文件</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"presets"</span> : ['es2015']</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>（2）安装es6转换模块</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install babel-preset-es2015 --save-dev</span><br></pre></td></tr></table></figure>
+<p>（3）全局安装命令行工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install  babel-cli -g</span><br></pre></td></tr></table></figure>
+<p>（4）使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">babel-node js文件名</span><br></pre></td></tr></table></figure>
+<h2 id="5-3-语法新特性"><a href="#5-3-语法新特性" class="headerlink" title="5.3 语法新特性"></a>5.3 语法新特性</h2><h3 id="5-3-1-变量声明let【重要】"><a href="#5-3-1-变量声明let【重要】" class="headerlink" title="5.3.1 变量声明let【重要】"></a>5.3.1 变量声明let【重要】</h3><p>我们都是知道在ES6以前，var关键字声明变量。无论声明在何处，都会被视为声明在函数的最顶部(不在函数内即在全局作用域的最顶部)。这就是函数变量提升例如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(bool) &#123;</span><br><span class="line">      <span class="keyword">var</span> test = <span class="string">'hello man'</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(test)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上的代码实际上是:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> test <span class="comment">// 变量提升</span></span><br><span class="line">    <span class="keyword">if</span>(bool) &#123;</span><br><span class="line">        test = <span class="string">'hello man'</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//此处访问test 值为undefined</span></span><br><span class="line">        <span class="built_in">console</span>.log(test)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//此处访问test 值为undefined</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>所以不用关心bool是否为true or false。实际上，无论如何test都会被创建声明。</p>
+<p>接下来ES6主角登场：</p>
+<p>我们通常用let和const来声明，let表示变量、const表示常量。let和const都是块级作用域。怎么理解这个块级作用域？在一个函数内部 ，在一个代码块内部。看以下代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">aa</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">if</span>(bool) &#123;</span><br><span class="line">      <span class="keyword">let</span> test = <span class="string">'hello man'</span></span><br><span class="line">   &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">       <span class="comment">//test 在此处访问不到</span></span><br><span class="line">       <span class="built_in">console</span>.log(test)</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-2-常量声明"><a href="#5-3-2-常量声明" class="headerlink" title="5.3.2 常量声明"></a>5.3.2 常量声明</h3><p>const 用于声明常量，看以下代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> name = <span class="string">'lux'</span></span><br><span class="line">name = <span class="string">'joe'</span> <span class="comment">//再次赋值此时会报错</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-3-3-模板字符串"><a href="#5-3-3-模板字符串" class="headerlink" title="5.3.3 模板字符串"></a>5.3.3 模板字符串</h3><p>es6模板字符简直是开发者的福音啊，解决了ES5在字符串功能上的痛点。</p>
+<p>第一个用途，基本的字符串格式化。将表达式嵌入字符串中进行拼接。用${}来界定。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es5 </span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">'lux'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'hello'</span> + name )</span><br><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="keyword">const</span> name = <span class="string">'lux'</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`hello <span class="subst">$&#123;name&#125;</span>`</span>) <span class="comment">//hello lux</span></span><br></pre></td></tr></table></figure>
+<p>第二个用途，在ES5时我们通过反斜杠()来做多行字符串或者字符串一行行拼接。ES6反引号(<code></code>)直接搞定。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="keyword">var</span> msg = <span class="string">"Hi \</span></span><br><span class="line"><span class="string">man!"</span></span><br><span class="line"><span class="comment">// es6</span></span><br><span class="line"><span class="keyword">const</span> template = <span class="string">`&lt;div&gt;</span></span><br><span class="line"><span class="string">    &lt;span&gt;hello world&lt;/span&gt;</span></span><br><span class="line"><span class="string">&lt;/div&gt;`</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-3-4-函数默认参数"><a href="#5-3-4-函数默认参数" class="headerlink" title="5.3.4 函数默认参数"></a>5.3.4 函数默认参数</h3><p>ES6为参数提供了默认值。在定义函数时便初始化了这个参数，以便在参数没有被传递进去时使用。</p>
+<p>看例子代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">action</span>(<span class="params">num = <span class="number">200</span></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num)</span><br><span class="line">&#125;</span><br><span class="line">action() <span class="comment">//200</span></span><br><span class="line">action(<span class="number">300</span>) <span class="comment">//300</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-3-5-箭头函数【重点】"><a href="#5-3-5-箭头函数【重点】" class="headerlink" title="5.3.5 箭头函数【重点】"></a>5.3.5 箭头函数【重点】</h3><p>ES6很有意思的一部分就是函数的快捷写法。也就是箭头函数。</p>
+<p>箭头函数最直观的三个特点。</p>
+<p>1不需要function关键字来创建函数</p>
+<p>2省略return关键字</p>
+<p><strong>3继承当前上下文的 this 关键字</strong></p>
+<p>看下面代码（ES6）</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(response,message) =&gt; &#123;</span><br><span class="line">   .......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相当于ES5代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params">response,message</span>)</span>&#123;</span><br><span class="line">    ......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-6-对象初始化简写"><a href="#5-3-6-对象初始化简写" class="headerlink" title="5.3.6 对象初始化简写"></a>5.3.6 对象初始化简写</h3><p>ES5我们对于对象都是以键值对的形式书写，是有可能出现键值对重名的。例如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">people</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            name: name,</span><br><span class="line">            age: age</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>以上代码可以简写为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">people</span>(<span class="params">name, age</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">          name,</span><br><span class="line">          age</span><br><span class="line">      &#125;;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-7-解构"><a href="#5-3-7-解构" class="headerlink" title="5.3.7 解构"></a>5.3.7 解构</h3><p>数组和对象是JS中最常用也是最重要表示形式。为了简化提取信息，ES6新增了解构，这是将一个数据结构分解为更小的部分的过程</p>
+<p>ES5我们提取对象中的信息形式如下</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> people = &#123;</span><br><span class="line">    name: <span class="string">'lux'</span>,</span><br><span class="line">    age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> name = people.name</span><br><span class="line"><span class="keyword">const</span> age = people.age</span><br><span class="line"><span class="built_in">console</span>.log(name + <span class="string">' --- '</span> + age)</span><br></pre></td></tr></table></figure>
+<p>是不是觉得很熟悉，没错，在ES6之前我们就是这样获取对象信息的，一个一个获取。现在，ES6的解构能让我们从对象或者数组里取出数据存为变量，例如</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对象</span></span><br><span class="line">    <span class="keyword">const</span> people = &#123;</span><br><span class="line">        name: <span class="string">'lux'</span>,</span><br><span class="line">        age: <span class="number">20</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> &#123; name, age &#125; = people</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;name&#125;</span> --- <span class="subst">$&#123;age&#125;</span>`</span>)</span><br><span class="line">    <span class="comment">//数组</span></span><br><span class="line">    <span class="keyword">const</span> color = [<span class="string">'red'</span>, <span class="string">'blue'</span>]</span><br><span class="line">    <span class="keyword">const</span> [first, second] = color</span><br><span class="line">    <span class="built_in">console</span>.log(first) <span class="comment">//'red'</span></span><br><span class="line">    <span class="built_in">console</span>.log(second) <span class="comment">//'blue'</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-3-8-Spread-Operator"><a href="#5-3-8-Spread-Operator" class="headerlink" title="5.3.8 Spread Operator"></a>5.3.8 Spread Operator</h3><p>ES6中另外一个好玩的特性就是Spread Operator 也是三个点儿…接下来就展示一下它的用途。 组装对象或者数组</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数组</span></span><br><span class="line"><span class="keyword">const</span> color = [<span class="string">'red'</span>, <span class="string">'yellow'</span>]</span><br><span class="line"><span class="keyword">const</span> colorful = [...color, <span class="string">'green'</span>, <span class="string">'pink'</span>]</span><br><span class="line"><span class="built_in">console</span>.log(colorful) <span class="comment">//[red, yellow, green, pink]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//对象</span></span><br><span class="line"><span class="keyword">const</span> alp = &#123; <span class="attr">fist</span>: <span class="string">'a'</span>, <span class="attr">second</span>: <span class="string">'b'</span>&#125;</span><br><span class="line"><span class="keyword">const</span> alphabets = &#123; ...alp, <span class="attr">third</span>: <span class="string">'c'</span> &#125;</span><br><span class="line"><span class="built_in">console</span>.log(alphabets) <span class="comment">//&#123; "fist": "a", "second": "b", "third": "c"</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-3-9-import-和-export【重点】"><a href="#5-3-9-import-和-export【重点】" class="headerlink" title="5.3.9 import 和 export【重点】"></a>5.3.9 import 和 export【重点】</h3><p>import导入模块、export导出模块</p>
+<p>lib.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> fn0=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'fn0...'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;fn0&#125;</span><br><span class="line"><span class="keyword">let</span> dele=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'dele...'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> &#123;dele&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 还可以写成</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    fn0()&#123;</span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">'fn0...'</span>);  </span><br><span class="line">    &#125;,</span><br><span class="line">    dele()&#123;</span><br><span class="line">        <span class="comment">// ....</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>demo9.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;fn0&#125; <span class="keyword">from</span> <span class="string">'./lib'</span></span><br><span class="line"><span class="keyword">import</span> &#123;dele&#125; <span class="keyword">from</span> <span class="string">'./lib'</span></span><br><span class="line">fn0();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 还可以写成</span></span><br><span class="line"><span class="comment">// 1.</span></span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> jsApi <span class="keyword">from</span> <span class="string">'./lib.js'</span>  <span class="comment">// 后缀可以省略</span></span><br><span class="line">jsApi.info()</span><br><span class="line">jsApi.dele()</span><br><span class="line"><span class="comment">// 2.</span></span><br><span class="line"><span class="keyword">import</span> jsApi <span class="keyword">from</span> <span class="string">'./lib.js'</span>  <span class="comment">// 使用这种方式 ，必须要使用export default &#123;&#125; 导出</span></span><br></pre></td></tr></table></figure>
+<p>注意：node(v8.x)本身并不支持import关键字，所以我们需要使用babel的命令行工具来执行（配置详见6.2小节内容）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">babel-node demo9</span><br></pre></td></tr></table></figure>
+<h3 id="5-3-10-Promise（自学内容）"><a href="#5-3-10-Promise（自学内容）" class="headerlink" title="5.3.10 Promise（自学内容）"></a>5.3.10 Promise（自学内容）</h3><p>​    Promise 是异步编程的一种解决方案，比传统的解决方案–回调函数和事件－－更合理和更强大。它由社区最早提出和实现，ES6将其写进了语言标准，统一了语法，原生提供了Promise.</p>
+<p>​    此知识点属于本章自学内容，请同学们百度promise查阅文章完成自学（完成测试代码，整理自学笔记）。</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span></p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John Doe">John Doe</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-02-15, 00:54:38</p>
+    <p><span class="copy-title">最后更新:</span>2018-11-12, 19:52:19</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/02/15/nodeJS/" title="">http://yoursite.com/2019/02/15/nodeJS/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("http://img.xiangzhangshugongyi.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

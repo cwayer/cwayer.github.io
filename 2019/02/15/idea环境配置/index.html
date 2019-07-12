@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <title>Hexo</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Hexo">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Maven 软件的安装Apache-maven-3.5.2 下载地址：http://archive.apache.org/dist/maven/maven-3/ Maven 下载后，将 Maven 解压到一个没有中文没有空格的路径下，比如 D:\software\maven 下面。解压后目录结构如下： 12345bin:存放了 maven 的命令，比如我们前面用到的 mvn tomcat:runb">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven 软件的安装">
+<meta property="og:url" content="http://yoursite.com/2019/07/12/maven仓库与tomcat/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Maven 软件的安装Apache-maven-3.5.2 下载地址：http://archive.apache.org/dist/maven/maven-3/ Maven 下载后，将 Maven 解压到一个没有中文没有空格的路径下，比如 D:\software\maven 下面。解压后目录结构如下： 12345bin:存放了 maven 的命令，比如我们前面用到的 mvn tomcat:runb">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542103258044.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104112703.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104333475.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104391221.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542104499125.png">
+<meta property="og:updated_time" content="2019-07-12T14:35:10.098Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Maven 软件的安装">
+<meta name="twitter:description" content="Maven 软件的安装Apache-maven-3.5.2 下载地址：http://archive.apache.org/dist/maven/maven-3/ Maven 下载后，将 Maven 解压到一个没有中文没有空格的路径下，比如 D:\software\maven 下面。解压后目录结构如下： 12345bin:存放了 maven 的命令，比如我们前面用到的 mvn tomcat:runb">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/cwayer/assets/master/1542103258044.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1"></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="/js/iconfont.js?v=1"></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg">
+</a>
+<div class="author">
+    <span>John Doe</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="rss" href="/atom.xml" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-rss"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="facebook" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-facebook"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="instagram" href="https://www.facebook.com/faker.tops" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-instagram"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="reddit" href="https://www.reddit.com/user/yelog/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-reddit"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="weibo" href="http://weibo.com/u/2307534817" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-weibo"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/ff56736de7cf" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zhihu" href="https://www.zhihu.com/people/jaytp/activities" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zhihu"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="oschina" href="https://my.oschina.net/yelog" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+        <a title="email" href="mailto:jaytp@qq.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=872336115&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="kugou" href="https://www.kugou.com/" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-kugou"/>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="neteasemusic" href="https://music.163.com/#/user/home?id=88151013" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-neteasemusic"/>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(9)</small></div></li>
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a style="border-right: 1px solid #fff; width: 49%" class="about site_url" href="/about">关于</a><a style="width: 50%" class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="9">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://yelog.org/">叶落阁</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off" id="local-search-input">
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none">
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a class="" href="/2019/02/15/vmware安装与激活/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 01:00:49">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/Java日志文件的八个级别/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 00:54:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/hello-world/" data-tag="" data-author="">
+            <span class="post-title" title="Hello World">Hello World</span>
+            <span class="post-date" title="2019-02-15 00:37:47">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/Vue/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 00:54:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/hello/" data-tag="" data-author="">
+            <span class="post-title" title="hello">hello</span>
+            <span class="post-date" title="2019-02-15 01:02:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/idea环境配置/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 01:00:49">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/07/12/maven仓库与tomcat/" data-tag="" data-author="">
+            <span class="post-title" title="Maven 软件的安装">Maven 软件的安装</span>
+            <span class="post-date" title="2019-07-12 22:29:09">2019/07/12</span>
+        </a>
+        
+        <a class="" href="/2019/02/15/nodeJS/" data-tag="" data-author="">
+            <span class="post-title" title=""></span>
+            <span class="post-date" title="2019-02-15 00:54:38">2019/02/15</span>
+        </a>
+        
+        <a class="" href="/2019/07/12/小兵/" data-tag="" data-author="">
+            <span class="post-title" title="小兵">小兵</span>
+            <span class="post-date" title="2019-07-12 22:29:09">2019/07/12</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-idea环境配置" class="article article-type-post" itemscope="" itemprop="blogPost">
+    
+    <div class="article-meta">
+        
+        
+        
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title="更新时间: 2018-12-13 20:19:14">2019-02-15 01:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装与环境"><span class="toc-text">安装与环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#正常安装，选择电脑位数版本"><span class="toc-text">正常安装，选择电脑位数版本</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#首次不导入设置"><span class="toc-text">首次不导入设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建工程设置sdk"><span class="toc-text">创建工程设置sdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字体设置"><span class="toc-text">字体设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目目录"><span class="toc-text">项目目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Maven配置"><span class="toc-text">Maven配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他配置"><span class="toc-text">其他配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#配置编码"><span class="toc-text">配置编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置jdk"><span class="toc-text">配置jdk</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置快捷键"><span class="toc-text">配置快捷键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置idea导入包"><span class="toc-text">设置idea导入包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义自己代码模板"><span class="toc-text">自定义自己代码模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提示忽略大小写"><span class="toc-text">提示忽略大小写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置虚拟机内存"><span class="toc-text">配置虚拟机内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置配置编码问题"><span class="toc-text">设置配置编码问题</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#IDEA常用快捷键"><span class="toc-text">IDEA常用快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义设置快捷键"><span class="toc-text">自定义设置快捷键</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="安装与环境"><a href="#安装与环境" class="headerlink" title="安装与环境"></a>安装与环境</h1><h2 id="正常安装，选择电脑位数版本"><a href="#正常安装，选择电脑位数版本" class="headerlink" title="正常安装，选择电脑位数版本"></a>正常安装，选择电脑位数版本</h2><p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542101250062.png" alt="1542101250062"></p>
+<h2 id="首次不导入设置"><a href="#首次不导入设置" class="headerlink" title="首次不导入设置"></a>首次不导入设置</h2><p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542101286857.png" alt="1542101286857"></p>
+<h2 id="创建工程设置sdk"><a href="#创建工程设置sdk" class="headerlink" title="创建工程设置sdk"></a>创建工程设置sdk</h2><p>选择 Create New Project,点击 new 按钮，配置安装的 JDK版本,选择 JDK目录，点击确定</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542101318857.png" alt="1542101318857"></p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542101354382.png" alt="1542101354382"></p>
+<p>一直下一步，创建项目名</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542101387330.png" alt="1542101387330"></p>
+<p> IDEA的工作界面，我们的项目已经创建好了，如果再新建项目，点击 File-&gt;new-&gt;Project</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542101427304.png" alt="1542101427304"></p>
+<h2 id="字体设置"><a href="#字体设置" class="headerlink" title="字体设置"></a>字体设置</h2><p>点击菜单栏上的 File-&gt;Settings-&gt;Editor-&gt;Font 修改字体。</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542101487665.png" alt="1542101487665"></p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542101504520.png" alt="1542101504520"></p>
+<h2 id="项目目录"><a href="#项目目录" class="headerlink" title="项目目录"></a>项目目录</h2><p>.idea 目录和 demo.iml 和我们开发无关，是IDEA工具自己使用的<br>out 目录是存储编译后的.class文件<br>src 目录是存储我们编写的.java源文件</p>
+<h2 id="Maven配置"><a href="#Maven配置" class="headerlink" title="Maven配置"></a>Maven配置</h2><p>设置maven仓库</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1528254377666.png" alt="img"></p>
+<h2 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a>其他配置</h2><h3 id="配置编码"><a href="#配置编码" class="headerlink" title="配置编码"></a>配置编码</h3><p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1528254443992.png" alt="img"></p>
+<h3 id="配置jdk"><a href="#配置jdk" class="headerlink" title="配置jdk"></a>配置jdk</h3><p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1528254563988.png" alt="img"></p>
+<h3 id="配置快捷键"><a href="#配置快捷键" class="headerlink" title="配置快捷键"></a>配置快捷键</h3><p>可以选择模板，自定义请先copy个副本<br><img src="https://raw.githubusercontent.com/cwayer/assets/master/1529678575704.png" alt="img"></p>
+<h3 id="设置idea导入包"><a href="#设置idea导入包" class="headerlink" title="设置idea导入包"></a>设置idea导入包</h3><p>（多个同名的类调用不同的包，必须自己手动Alt+Enter设置）<br><img src="https://raw.githubusercontent.com/cwayer/assets/master/1529678703317.png" alt="img"></p>
+<h3 id="自定义自己代码模板"><a href="#自定义自己代码模板" class="headerlink" title="自定义自己代码模板"></a>自定义自己代码模板</h3><p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1529678805624.png" alt="img"></p>
+<h3 id="提示忽略大小写"><a href="#提示忽略大小写" class="headerlink" title="提示忽略大小写"></a>提示忽略大小写</h3><p>默认idea设置是区分大小写的，可以设置关闭</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1529679037573.png" alt="img"></p>
+<h3 id="配置虚拟机内存"><a href="#配置虚拟机内存" class="headerlink" title="配置虚拟机内存"></a>配置虚拟机内存</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">修改idea64.exe.vmoptions（64位电脑选择此文件）</span><br><span class="line">一个例子，电脑内存8G，设置如下：</span><br><span class="line">-Xms1024m</span><br><span class="line">-Xmx4096m</span><br><span class="line">-XX:MaxPermSize=1024m</span><br><span class="line">-XX:ReservedCodeCacheSize=1024m</span><br></pre></td></tr></table></figure>
+<h3 id="设置配置编码问题"><a href="#设置配置编码问题" class="headerlink" title="设置配置编码问题"></a>设置配置编码问题</h3><p>修改idea64.exe.vmoptions</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-Dfile.encoding=UTF8</span><br></pre></td></tr></table></figure>
+<h1 id="IDEA常用快捷键"><a href="#IDEA常用快捷键" class="headerlink" title="IDEA常用快捷键"></a>IDEA常用快捷键</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">快捷键 功能</span><br><span class="line">Alt+Enter 导入包，自动修正代码</span><br><span class="line">Ctrl+Y 删除光标所在行</span><br><span class="line">Ctrl+D 复制光标所在行的内容，插入光标位置下面</span><br><span class="line">Ctrl+Alt+L 格式化代码</span><br><span class="line">Ctrl+/ 单行注释</span><br><span class="line">Ctrl+Shift+/ 选中代码注释，多行注释，再按取消注释</span><br><span class="line">Alt+Ins 自动生成代码，toString，get，set等方法</span><br><span class="line">Alt+Shift+上下箭头 移动当前代码行</span><br><span class="line">Ctrl+空格	补全代码</span><br></pre></td></tr></table></figure>
+<h2 id="自定义设置快捷键"><a href="#自定义设置快捷键" class="headerlink" title="自定义设置快捷键"></a>自定义设置快捷键</h2><p>部分快捷键冲突，例如Ctrl+空格，因此需要手动修改</p>
+<p><code>File-&gt;Settings-&gt;keymap-&gt;Main menu-&gt;code-&gt;Completion-&gt;Basic</code></p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1542101683853.png" alt="1542101683853"></p>
+<p>双击 Basic-&gt;remove-&gt;Ctrl+空格<br>再次双击 Basic-&gt;Add Keyboard-&gt;键入 Alt+/-&gt;点击OK</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 jaytp@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a href="javascript:void(0)" class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span></p>
+    
+    <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="John Doe">John Doe</a></p>
+    <p><span class="copy-title">发布时间:</span>2019-02-15, 01:00:49</p>
+    <p><span class="copy-title">最后更新:</span>2018-12-13, 20:19:14</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/02/15/idea环境配置/" title="">http://yoursite.com/2019/02/15/idea环境配置/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2019 Yelog</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" href="javascript:void(0)"></a>
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
+<script src="/js/script.js?v=1"></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': [],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+    .post .pjax article blockquote {
+        padding: 10px 20px;
+        background-color: white;
+        border: none;
+        border-left: 4px solid #42b983;
+        border-right: 4px solid #42b983;
+        border-radius: 10px;
+    }
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        background: url("http://img.xiangzhangshugongyi.com/FlSExUGfRSaqxkK5v42CpuI-tXAL.jpg");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
