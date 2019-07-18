@@ -21,8 +21,7 @@
     <meta name="keywords" content="">
 
 
-    <meta name="description" content="spring cloud zuul网关的作用1是类似于Nginx的网址重定向,但zuul的重定向的一般是整个spring cloud里在Eureka注册中心的模块.
-2、zuul更重要的功能为过...">
+    <meta name="description" content="搜索解决方案-Solr 【3】课程目标目标 1：实现品优购价格区间筛选功能目标 2：实现搜索结果分页功能目标 3：理解多关键字搜索目标 4：实现搜索结果排序功能目标 5：实现隐藏品牌列表功能目标...">
 
 
 
@@ -34,7 +33,7 @@
     <!--Title-->
 
 
-<title>spring cloud zuul网关的作用 | Hexo</title>
+<title>Hexo</title>
 
 
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -139,9 +138,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="spring cloud zuul网关的作用">
+        <h1 id="">
             
-	            spring cloud zuul网关的作用
+	            NO Title!
             
         </h1>
         <div class="post-meta">
@@ -165,7 +164,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/07/12</span>
+            <span class="date-meta">2019/07/18</span>
         </span>
         
     
@@ -175,11 +174,42 @@
     </div>
     
     <div class="post-body post-content">
-        <h3 id="spring-cloud-zuul网关的作用"><a href="#spring-cloud-zuul网关的作用" class="headerlink" title="spring cloud zuul网关的作用"></a>spring cloud zuul网关的作用</h3><p>1是类似于Nginx的网址重定向,但zuul的重定向的一般是整个spring cloud里在Eureka注册中心的模块.</p>
-<p>2、zuul更重要的功能为过滤请求.</p>
-<h3 id="solr如何实现搜索的？"><a href="#solr如何实现搜索的？" class="headerlink" title="solr如何实现搜索的？"></a>solr如何实现搜索的？</h3><p>倒排索引，先抽取文档中词，并建立词与文档id的映射关系，然后查询的时候会根据词去查询文档id，并查询出文档</p>
-<p><em>倒排索引</em>源于实际应用中需要根据属性的值来查找记录。这种<em>索引</em>表中的每一项都包括一个属性值和具有该属性值的各记录的地址。</p>
-<h3 id="solr的索引查询为什么比数据库要快"><a href="#solr的索引查询为什么比数据库要快" class="headerlink" title="solr的索引查询为什么比数据库要快"></a>solr的索引查询为什么比数据库要快</h3><p>Solr使用的是Lucene API实现的全文检索。全文检索本质上是查询的索引。而数据库中并不是所有的字段都建立的索引，更何况如果使用like查询时很大的可能是不使用索引，所以使用solr查询时要比查数据库快</p>
+        <h1 id="搜索解决方案-Solr-【3】"><a href="#搜索解决方案-Solr-【3】" class="headerlink" title="搜索解决方案-Solr 【3】"></a>搜索解决方案-Solr 【3】</h1><h2 id="课程目标"><a href="#课程目标" class="headerlink" title="课程目标"></a>课程目标</h2><p>目标 1：实现品优购价格区间筛选功能<br>目标 2：实现搜索结果分页功能<br>目标 3：理解多关键字搜索<br>目标 4：实现搜索结果排序功能<br>目标 5：实现隐藏品牌列表功能<br>目标 6：实现搜索页与首页对接功能<br>目标 7：完成更新索引库的功能</p>
+<h3 id="1-按价格区间筛选"><a href="#1-按价格区间筛选" class="headerlink" title="1.按价格区间筛选"></a>1.按价格区间筛选</h3><h4 id="1-1-需求分析"><a href="#1-1-需求分析" class="headerlink" title="1.1 需求分析"></a>1.1 需求分析</h4><p>点击搜索面板上的价格区间，实现按价格筛选</p>
+<h4 id="1-2-前端代码"><a href="#1-2-前端代码" class="headerlink" title="1.2 前端代码"></a>1.2 前端代码</h4><p>1.2.1 前端控制层<br>（1）修改 pinyougou-search-web 的 searchController.js 搜索条件的定义</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$scope.searchMap=&#123;<span class="string">'keywords'</span>:<span class="string">''</span>,<span class="string">'category'</span>:<span class="string">''</span>,<span class="string">'brand'</span>:<span class="string">''</span>,<span class="string">'spec'</span>:&#123;&#125;,<span class="string">'price'</span>:<span class="string">''</span> &#125;;<span class="comment">//搜</span></span><br><span class="line">索条件封装对象</span><br></pre></td></tr></table></figure>
+<p>（2）修改 pinyougou-search-web 的 searchController.js 添加搜索项和删除搜索项的方法<br>//添加搜索项<br>$scope.addSearchItem=function(key,value){<br><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540353062567.png" alt="1540353062567"></p>
+<p>就是判断当前页所展示页码是否到头欧哲是否到尾，否则为false并赋值给变量，前端判断这个变量</p>
+<p>高亮页码：判断当前页码是否等于点击的显示页签</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540362811574.png" alt="1540362811574"></p>
+<p>搜索后页面从1开始：</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540363942584.png" alt="1540363942584"></p>
+<h4 id="按价格排序（升序-降序）"><a href="#按价格排序（升序-降序）" class="headerlink" title="按价格排序（升序 降序）"></a>按价格排序（升序 降序）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Sort sort=new Sort(枚举值,排序字段)</span><br><span class="line">query.addSort(sort);</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540364993423.png" alt="1540364993423"></p>
+<p>排序不能写死，可以写活</p>
+<p>先在前段里加条件结构</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540365251602.png" alt="1540365251602"></p>
+<p>再后台代码判断</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540365198885.png" alt="1540365198885"></p>
+<p>写Controller</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540365485917.png" alt="1540365485917"></p>
+<h4 id="按新品排序"><a href="#按新品排序" class="headerlink" title="按新品排序"></a>按新品排序</h4><p>设置solr中的schema,添加新列</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540366833980.png" alt="1540366833980"></p>
+<p>重新导入数据库到solr</p>
+<p>增加实体类，重新执行导入操作（假如log4j,因为dao层使用里log4j,没使用可以不加）</p>
+<h4 id="quarzt"><a href="#quarzt" class="headerlink" title="quarzt"></a>quarzt</h4><p>定时任务框架 业余了解</p>
+<h4 id="将搜索功能整合到首页"><a href="#将搜索功能整合到首页" class="headerlink" title="将搜索功能整合到首页"></a>将搜索功能整合到首页</h4><p>思路：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">index页面传递参数（关键词）给搜索</span><br><span class="line">搜索页接收并查询</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540368915298.png" alt="1540368915298"></p>
+<p>这里的search（）方法是传递</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540369021354.png" alt="1540369021354"></p>
+<p>控制器需要有local服务</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540369085129.png" alt="1540369085129"></p>
+<p>加载关键字</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540369116569.png" alt="1540369116569"></p>
+<h4 id="批量审核数据到solr"><a href="#批量审核数据到solr" class="headerlink" title="批量审核数据到solr"></a>批量审核数据到solr</h4><p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540370510184.png" alt="1540370510184"></p>
+<p>下面这样可以省去写循环</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540372289703.png" alt="1540372289703"></p>
 
     </div>
     
@@ -197,15 +227,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/07/18/Day17_CROS/" class="pre-post btn btn-default" title="">
+        <a href="/2019/07/18/Day12_freeMarker/" class="pre-post btn btn-default" title="">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
             <span class="hidden-xs"></span>
         </a>
     
     
-        <a href="/2019/07/12/maven仓库与tomcat/" class="next-post btn btn-default" title="Maven 软件的安装">
+        <a href="/2019/07/18/Day10_Search/" class="next-post btn btn-default" title="">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Maven 软件的安装</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs"></span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -248,7 +278,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#spring-cloud-zuul网关的作用"><span class="toc-text">spring cloud zuul网关的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solr如何实现搜索的？"><span class="toc-text">solr如何实现搜索的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solr的索引查询为什么比数据库要快"><span class="toc-text">solr的索引查询为什么比数据库要快</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#搜索解决方案-Solr-【3】"><span class="toc-text">搜索解决方案-Solr 【3】</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#课程目标"><span class="toc-text">课程目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-按价格区间筛选"><span class="toc-text">1.按价格区间筛选</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-需求分析"><span class="toc-text">1.1 需求分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-前端代码"><span class="toc-text">1.2 前端代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按价格排序（升序-降序）"><span class="toc-text">按价格排序（升序 降序）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按新品排序"><span class="toc-text">按新品排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#quarzt"><span class="toc-text">quarzt</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#将搜索功能整合到首页"><span class="toc-text">将搜索功能整合到首页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#批量审核数据到solr"><span class="toc-text">批量审核数据到solr</span></a></li></ol></li></ol></li></ol></li></ol>
         
     </div>
 </aside>

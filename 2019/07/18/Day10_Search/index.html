@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="">
+
+
+    <meta name="description" content="搜索解决方案-Solr品优购-高亮显示后端代码修改服务层代码 ItemSearchServiceImpl.java创建私有方法，用于返回查询列表的结果（高亮）
+高亮结果处理不能用page.get...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="">
+            
+	            NO Title!
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/18</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="搜索解决方案-Solr"><a href="#搜索解决方案-Solr" class="headerlink" title="搜索解决方案-Solr"></a>搜索解决方案-Solr</h1><h2 id="品优购-高亮显示"><a href="#品优购-高亮显示" class="headerlink" title="品优购-高亮显示"></a>品优购-高亮显示</h2><h3 id="后端代码"><a href="#后端代码" class="headerlink" title="后端代码"></a>后端代码</h3><p>修改服务层代码 ItemSearchServiceImpl.java<br>创建私有方法，用于返回查询列表的结果（高亮）</p>
+<p>高亮结果处理不能用page.getContent，否则返回的是原生结果</p>
+<p>需要用page.getHighlighted()高亮入口即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 根据关键字搜索列表</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> keywords</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Map <span class="title">searchList</span><span class="params">(Map searchMap)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Map map = <span class="keyword">new</span> HashMap();</span><br><span class="line">    HighlightQuery query = <span class="keyword">new</span> SimpleHighlightQuery();<span class="comment">//HighlightQuery是Query子类</span></span><br><span class="line">    HighlightOptions highlightOptions=<span class="keyword">new</span> HighlightOptions().addField(<span class="string">"item_title"</span>);<span class="comment">//设置高亮的域</span></span><br><span class="line">    highlightOptions.setSimplePrefix(<span class="string">"&lt;em style='color:red'&gt;"</span>);<span class="comment">//高亮前缀</span></span><br><span class="line">    highlightOptions.setSimplePostfix(<span class="string">"&lt;/em&gt;"</span>);<span class="comment">//高亮后缀</span></span><br><span class="line">    query.setHighlightOptions(highlightOptions);<span class="comment">//为查询对象设置高亮选项</span></span><br><span class="line">    <span class="comment">//按照关键字查询</span></span><br><span class="line">    Criteria criteria = <span class="keyword">new</span></span><br><span class="line">    Criteria(<span class="string">"item_keywords"</span>).is(searchMap.get(<span class="string">"keywords"</span>));</span><br><span class="line">    query.addCriteria(criteria);</span><br><span class="line">    HighlightPage&lt;TbItem&gt; page = solrTemplate.queryForHighlightPage(query,</span><br><span class="line">                                 TbItem.class);<span class="comment">//返回高亮页对象</span></span><br><span class="line">    <span class="keyword">for</span>(HighlightEntry&lt;TbItem&gt; h : page.getHighlighted()) <span class="comment">//循环高亮入口集合</span></span><br><span class="line">    &#123;</span><br><span class="line">        TbItem item = h.getEntity();<span class="comment">//获取原实体类 也就是当前对象每个结果集</span></span><br><span class="line">        <span class="keyword">if</span>(h.getHighlights().size() &gt; <span class="number">0</span> &amp;&amp;</span><br><span class="line">                h.getHighlights().get(<span class="number">0</span>).getSnipplets().size() &gt; <span class="number">0</span>)<span class="comment">//判断有没有元素</span></span><br><span class="line">        &#123;</span><br><span class="line">            item.setTitle(h.getHighlights().get(<span class="number">0</span>).getSnipplets().get(<span class="number">0</span>));<span class="comment">//设置高亮的结果添加到标题</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    map.put(<span class="string">"rows"</span>, page.getContent());</span><br><span class="line">    <span class="keyword">return</span> map;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540172474020.png" alt="1540172474020"></p>
+<p>为什么有这么多集合，有可能存在多域，每个域中可能存在多行值，例如复制域</p>
+<p>修改 ItemSearchServiceImpl 的 search 方法，调用刚才编写的私有方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">search</span><span class="params">(Map searchMap)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="comment">//1.查询列表</span></span><br><span class="line">    map.putAll(searchList(searchMap));</span><br><span class="line">    <span class="keyword">return</span> map;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="前端代码"><a href="#前端代码" class="headerlink" title="前端代码"></a>前端代码</h3><p>为什么设置高亮后没解析HTML高亮呢？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">	我们测试后发现高亮显示的 html 代码原样输出，这是 angularJS 为了防止 html 攻击采取的</span><br><span class="line">安全机制。我们如何在页面上显示 html 的结果呢？我们会用到$sce 服务的 trustAsHtml 方法</span><br><span class="line">来实现转换。</span><br><span class="line">	因为这个功能具有一定通用性，我们可以通过 angularJS 的过滤器来简化开发，这样只写一</span><br><span class="line">次，调用的时候就非常方便了，看代码</span><br></pre></td></tr></table></figure>
+<p>（1）修改 base.js </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义模块:</span></span><br><span class="line"><span class="keyword">var</span> app = angular.module(<span class="string">"pinyougou"</span>, []);</span><br><span class="line"><span class="comment">/*$sce 服务写成过滤器 '$sce'加载 function传入*/</span></span><br><span class="line">app.filter(<span class="string">'trustHtml'</span>, [<span class="string">'$sce'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$sce</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> $sce.trustAsHtml(data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;]);</span><br></pre></td></tr></table></figure>
+<p>（2）使用过滤器</p>
+<p>ng-bind-html 指令用于显示 html 内容<br>竖线 |用于调用过滤器</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"attr"</span> <span class="attr">ng-bind-html</span>=<span class="string">"item.title | trustHtml"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="搜索业务"><a href="#搜索业务" class="headerlink" title="搜索业务"></a>搜索业务</h2><p>实现思路<br>（1）搜索面板的商品分类需要使用 Spring Data Solr 的分组查询来实现<br>（2）为了能够提高查询速度，我们需要把查询面板的品牌、规格数据提前放入 redis<br>（3）查询条件的构建、面板的隐藏需要使用 angularJS 来实现<br>（4）后端的分类、品牌、规格、价格区间查询需要使用spring data solr过滤查询来实现</p>
+<h3 id="查询分类列表"><a href="#查询分类列表" class="headerlink" title="查询分类列表"></a>查询分类列表</h3><p>根据搜索关键字查询商品分类名称列表</p>
+<h4 id="后端代码-1"><a href="#后端代码-1" class="headerlink" title="后端代码"></a>后端代码</h4><p>修改 SearchItemServiceImpl.java 创建方法 </p>
+<p>分组需指定要分组的域</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 查询分类列表</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> searchMap</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> List <span class="title">searchCategoryList</span><span class="params">(Map searchMap)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    List&lt;String&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">    Query query = <span class="keyword">new</span> SimpleQuery();<span class="comment">//第二步 需要加条件</span></span><br><span class="line">    <span class="comment">//按照关键字查询</span></span><br><span class="line">    Criteria criteria = <span class="keyword">new</span></span><br><span class="line">    Criteria(<span class="string">"item_keywords"</span>).is(searchMap.get(<span class="string">"keywords"</span>));<span class="comment">//第三添加条件</span></span><br><span class="line">    query.addCriteria(criteria);</span><br><span class="line">    <span class="comment">//设置分组选项</span></span><br><span class="line">    GroupOptions groupOptions = <span class="keyword">new</span></span><br><span class="line">    GroupOptions().addGroupByField(<span class="string">"item_category"</span>);</span><br><span class="line">    query.setGroupOptions(groupOptions);<span class="comment">//第四设置分组发现要先new</span></span><br><span class="line">    <span class="comment">//得到分组页</span></span><br><span class="line">    GroupPage&lt;TbItem&gt; page = solrTemplate.queryForGroupPage(query, TbItem.class);<span class="comment">//第一步 分页查询 发现需要query</span></span><br><span class="line">    <span class="comment">//page.getContent会得到空值 这个方法用不到但由于子类而有的</span></span><br><span class="line">    <span class="comment">//可以通过page.getGroupResult获取结果集</span></span><br><span class="line">    <span class="comment">//根据列得到分组结果集</span></span><br><span class="line">    GroupResult&lt;TbItem&gt; groupResult = page.getGroupResult(<span class="string">"item_category"</span>);</span><br><span class="line">    <span class="comment">//得到分组结果入口页</span></span><br><span class="line">    Page&lt;GroupEntry&lt;TbItem&gt;&gt; groupEntries = groupResult.getGroupEntries();</span><br><span class="line">    <span class="comment">//得到分组入口集合 groupEntries分口入口页才能用getContent()</span></span><br><span class="line">    List&lt;GroupEntry&lt;TbItem&gt;&gt; content = groupEntries.getContent();</span><br><span class="line">    <span class="keyword">for</span>(GroupEntry&lt;TbItem&gt; entry : content)</span><br><span class="line">    &#123;</span><br><span class="line">        list.add(entry.getGroupValue());<span class="comment">//将分组结果的名称封装到返回值中</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540178057316.png" alt="1540178057316"></p>
+<p>search 方法调用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">search</span><span class="params">(Map searchMap)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="comment">//1.按关键字查询（高亮显示）</span></span><br><span class="line">    ......</span><br><span class="line">    <span class="comment">//2.根据关键字查询商品分类</span></span><br><span class="line">    List categoryList = searchCategoryList(searchMap);</span><br><span class="line">    map.put(<span class="string">"categoryList"</span>, categoryList);</span><br><span class="line">    <span class="keyword">return</span> map;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="前端代码-1"><a href="#前端代码-1" class="headerlink" title="前端代码"></a>前端代码</h4><p>修改 search.html</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"type-wrap"</span> <span class="attr">ng-if</span>=<span class="string">"resultMap.categoryList!=null"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fl key"</span>&gt;</span></span><br><span class="line">    商品分类</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fl value"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">ng-repeat</span>=<span class="string">"category in resultMap.categoryList"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>&#123;&#123;category&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fl ext"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="缓存品牌和规格数据"><a href="#缓存品牌和规格数据" class="headerlink" title="缓存品牌和规格数据"></a>缓存品牌和规格数据</h3><p>将商品分类数据、品牌数据、和规格数据都放入 Redis 存储。<br>（1）当用户进入运营商后台的商品分类页面时，将商品分类数据放入缓存（Hash）。以分类名称作为 key ,以模板 ID 作为值<br>（2）当用户进入运营商后台的模板管理页面时，分别将品牌数据和规格数据放入缓存<br>（Hash）。以模板 ID 作为 key,以品牌列表和规格列表作为值</p>
+<p>缓存实例数据结构：</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540190831330.png" alt="1540190831330"></p>
+<p>进行增删改时候都要进行更新，教程里增删改后都会进行分类管理界面刷新，因此做在查询里面即可。因为增删改后都会利用到查询方法。</p>
+<h4 id="缓存商品分类数据"><a href="#缓存商品分类数据" class="headerlink" title="缓存商品分类数据"></a>缓存商品分类数据</h4><p>将商品分类表存入缓存 pinyougou-sellergoods-service 工程需要引入 pinyougou-common 工程依赖。<br>修改 pinyougou-sellergoods-service 的 ItemCatServiceImpl.java，添加 redisTemplate</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 根据上级 ID 查询列表</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;TbItemCat&gt; <span class="title">findByParentId</span><span class="params">(Long parentId)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    TbItemCatExample example1 = <span class="keyword">new</span> TbItemCatExample();</span><br><span class="line">    <span class="comment">//条件查询</span></span><br><span class="line">    Criteria criteria1 = example1.createCriteria();</span><br><span class="line">    criteria1.andParentIdEqualTo(parentId);</span><br><span class="line">   </span><br><span class="line">    <span class="comment">//每次执行查询的时候，一次性读取缓存进行存储 (因为每次增删改都要执行此方法)</span></span><br><span class="line">    <span class="comment">//获取所有的分类</span></span><br><span class="line">    List&lt;TbItemCat&gt; list = findAll();</span><br><span class="line">    <span class="comment">//遍历获取分类明细</span></span><br><span class="line">    <span class="keyword">for</span>(TbItemCat itemCat : list)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//将模板ID放进缓存（以名称为key）</span></span><br><span class="line">        <span class="comment">//hash采用boundHashOps("name").put(key,value)</span></span><br><span class="line">        redisTemplate.boundHashOps(<span class="string">"itemCat"</span>).put(itemCat.getName(),</span><br><span class="line">                itemCat.getTypeId());</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"更新缓存:商品分类表"</span>);</span><br><span class="line">    <span class="keyword">return</span> itemCatMapper.selectByExample(example1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="缓存品牌和规格列表数据"><a href="#缓存品牌和规格列表数据" class="headerlink" title="缓存品牌和规格列表数据"></a>缓存品牌和规格列表数据</h4><p>修改 pinyougou-sellergoods-service 的 TypeTemplateServiceImpl.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 将数据存入缓存</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">saveToRedis</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//获取模板数据</span></span><br><span class="line">    List&lt;TbTypeTemplate&gt; typeTemplateList = findAll();</span><br><span class="line">    <span class="comment">//循环模板</span></span><br><span class="line">    <span class="keyword">for</span>(TbTypeTemplate typeTemplate : typeTemplateList)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//存储品牌列表</span></span><br><span class="line">        List&lt;Map&gt; brandList = JSON.parseArray(typeTemplate.getBrandIds(),Map.class);</span><br><span class="line"> 		redisTemplate.boundHashOps(<span class="string">"brandList"</span>).put(typeTemplate.getId(),brandList);</span><br><span class="line">        <span class="comment">//存储规格列表</span></span><br><span class="line">        List&lt;Map&gt; specList = findSpecList(typeTemplate.getId());</span><br><span class="line">        <span class="comment">//根据模板 ID 查询规格列表</span></span><br><span class="line">        redisTemplate.boundHashOps(<span class="string">"specList"</span>).put(typeTemplate.getId(),specList);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在查询分页方法(findPage) 时调用此方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> PageResult <span class="title">findPage</span><span class="params">(TbTypeTemplate typeTemplate, <span class="keyword">int</span> pageNum, <span class="keyword">int</span> pageSize)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ......</span><br><span class="line">    saveToRedis();<span class="comment">//存入数据到缓存</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> PageResult(page.getTotal(), page.getResult());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="加载缓存数据"><a href="#加载缓存数据" class="headerlink" title="加载缓存数据"></a>加载缓存数据</h4><p>启动 redis ,运行运营商管理后台，打开商品分类和模板管理页，即可将数据放入缓存中。</p>
+<h3 id="显示品牌和规格数据"><a href="#显示品牌和规格数据" class="headerlink" title="显示品牌和规格数据"></a>显示品牌和规格数据</h3><p>在搜索面板区域显示第一个分类的品牌和规格列表<br><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540192287992.png" alt="1540192287992"></p>
+<h4 id="后端代码-2"><a href="#后端代码-2" class="headerlink" title="后端代码"></a>后端代码</h4><p>修改 ItemSearchServiceImpl.java ，增加方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> RedisTemplate redisTemplate;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 查询品牌和规格列表</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> category 分类名称</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span></span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> Map <span class="title">searchBrandAndSpecList</span><span class="params">(String category)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Map map = <span class="keyword">new</span> HashMap();</span><br><span class="line">    <span class="comment">//1.根据商品分类名称获得模板ID</span></span><br><span class="line">    Long typeId = (Long) redisTemplate.boundHashOps(<span class="string">"itemCat"</span>).get(category);<span class="comment">//获取模板 ID</span></span><br><span class="line">    <span class="keyword">if</span>(typeId != <span class="keyword">null</span>)<span class="comment">//注要是为了容错</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//2.根据模板 ID 获取品牌列表</span></span><br><span class="line">        List brandList = (List)redisTemplate.boundHashOps(<span class="string">"brandList"</span>).get(typeId);</span><br><span class="line">        map.put(<span class="string">"brandList"</span>, brandList);<span class="comment">//返回值添加品牌列表</span></span><br><span class="line">        <span class="comment">//3.根据模板 ID 获取规格列表</span></span><br><span class="line">        List specList = (List)redisTemplate.boundHashOps(<span class="string">"specList"</span>).get(typeId);</span><br><span class="line">        map.put(<span class="string">"specList"</span>, specList);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> map;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Search 方法调用此方法（注意跟视频有点不同）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Map&lt;String, Object&gt; <span class="title">search</span><span class="params">(Map searchMap)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Map&lt;String, Object&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="comment">//1.按关键字查询（高亮显示）</span></span><br><span class="line">    <span class="comment">//2.根据关键字查询商品分类</span></span><br><span class="line">    <span class="comment">//3.查询品牌和规格列表</span></span><br><span class="line">    <span class="keyword">if</span>(categoryList.size() &gt; <span class="number">0</span>)<span class="comment">//容错</span></span><br><span class="line">    &#123;</span><br><span class="line">        map.putAll(searchBrandAndSpecList(categoryList.get(<span class="number">0</span>)));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> map;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="前端代码-2"><a href="#前端代码-2" class="headerlink" title="前端代码"></a>前端代码</h3><h4 id="获取品牌列表"><a href="#获取品牌列表" class="headerlink" title="获取品牌列表"></a>获取品牌列表</h4><p>修改页面 search.html，实现品牌列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"type-wrap logo"</span> <span class="attr">ng-if</span>=<span class="string">"resultMap.brandList!=null"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fl key brand"</span>&gt;</span></span><br><span class="line">    品牌</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"value logos"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"logo-list"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"brand in resultMap.brandList"</span>&gt;</span>&#123;&#123;brand.text&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ext"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span> <span class="attr">class</span>=<span class="string">"sui-btn"</span>&gt;</span>多选<span class="tag">&lt;/<span class="name">a</span>&gt;</span> <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:void(0);"</span>&gt;</span>更多<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="获取规格列表"><a href="#获取规格列表" class="headerlink" title="获取规格列表"></a>获取规格列表</h4><p>修改页面 search.html，实现规格列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"type-wrap"</span> <span class="attr">ng-repeat</span>=<span class="string">"spec in resultMap.specList"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fl key"</span>&gt;</span></span><br><span class="line">    &#123;&#123;spec.text&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fl value"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"type-list"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">"pojo in spec.options"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span>&gt;</span>&#123;&#123;pojo.optionName&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fl ext"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="过滤条件构建"><a href="#过滤条件构建" class="headerlink" title="过滤条件构建"></a>过滤条件构建</h3><p>点击搜索面板上的分类、品牌和规格，实现查询条件的构建。查询条件以面包屑的形式显示。<br>当面包屑显示分类、品牌和规格时，要同时隐藏搜索面板对应的区域。<br>用户可以点击面包屑上的 X 撤销查询条件。撤销后显示搜索面包相应的区域</p>
+<h4 id="添加搜索项"><a href="#添加搜索项" class="headerlink" title="添加搜索项"></a>添加搜索项</h4><p>修改 pinyougou-search-web 的 searchController.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义搜索对象结构</span></span><br><span class="line">$scope.searchMap =</span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">'keywords'</span>: <span class="string">''</span>,</span><br><span class="line">    <span class="string">'category'</span>: <span class="string">''</span>,</span><br><span class="line">    <span class="string">'brand'</span>: <span class="string">''</span>,</span><br><span class="line">    <span class="string">'spec'</span>: &#123;&#125;</span><br><span class="line">&#125;; <span class="comment">//搜索对象</span></span><br><span class="line"><span class="comment">//添加搜索项</span></span><br><span class="line">$scope.addSearchItem = <span class="function"><span class="keyword">function</span> (<span class="params">key, value</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (key == <span class="string">'category'</span> || key == <span class="string">'brand'</span>)</span><br><span class="line">    &#123; <span class="comment">//如果点击的是分类或者是品牌</span></span><br><span class="line">        $scope.searchMap[key] = value;<span class="comment">//key传递因此保持一致</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        $scope.searchMap.spec[key] = value;<span class="comment">//规格有多个</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>搜索对象的结构<br><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540195372395.png" alt="1540195372395"></p>
+<h4 id="点击搜索项"><a href="#点击搜索项" class="headerlink" title="点击搜索项"></a>点击搜索项</h4><p>修改 pinyougou-search-web 的 search.html ，为搜索面板添加点击事件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">点击商品分类标签</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">ng-click</span>=<span class="string">"addSearchItem('category',category)"</span>&gt;</span>&#123;&#123;category&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">点击品牌标签</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">ng-click</span>=<span class="string">"addSearchItem('brand',brand.text)"</span>&gt;</span>&#123;&#123;brand.text&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line">点击规格标签</span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span> <span class="attr">ng-click</span>=<span class="string">"addSearchItem(spec.text,pojo.optionName)"</span>&gt;</span></span><br><span class="line">&#123;&#123;pojo.optionName&#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个要多理解下</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540198141023.png" alt="1540198141023"></p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540199741430.png" alt="1540199741430"></p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540199770413.png" alt="1540199770413"></p>
+<h3 id="saveBeans跟saveBean区别"><a href="#saveBeans跟saveBean区别" class="headerlink" title="saveBeans跟saveBean区别"></a>saveBeans跟saveBean区别</h3><p>saveBean只是保存对象</p>
+<p>saveBeans可以保存数组</p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/18/Day11_SearchByPrice/" class="pre-post btn btn-default" title="">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs"></span>
+        </a>
+    
+    
+        <a href="/2019/07/18/Day09_Solr/" class="next-post btn btn-default" title="">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs"></span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: true,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#搜索解决方案-Solr"><span class="toc-text">搜索解决方案-Solr</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#品优购-高亮显示"><span class="toc-text">品优购-高亮显示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#后端代码"><span class="toc-text">后端代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端代码"><span class="toc-text">前端代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#搜索业务"><span class="toc-text">搜索业务</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#查询分类列表"><span class="toc-text">查询分类列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#后端代码-1"><span class="toc-text">后端代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#前端代码-1"><span class="toc-text">前端代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存品牌和规格数据"><span class="toc-text">缓存品牌和规格数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#缓存商品分类数据"><span class="toc-text">缓存商品分类数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#缓存品牌和规格列表数据"><span class="toc-text">缓存品牌和规格列表数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#加载缓存数据"><span class="toc-text">加载缓存数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#显示品牌和规格数据"><span class="toc-text">显示品牌和规格数据</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#后端代码-2"><span class="toc-text">后端代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端代码-2"><span class="toc-text">前端代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#获取品牌列表"><span class="toc-text">获取品牌列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取规格列表"><span class="toc-text">获取规格列表</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤条件构建"><span class="toc-text">过滤条件构建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#添加搜索项"><span class="toc-text">添加搜索项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#点击搜索项"><span class="toc-text">点击搜索项</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#saveBeans跟saveBean区别"><span class="toc-text">saveBeans跟saveBean区别</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

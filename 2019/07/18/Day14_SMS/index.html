@@ -1,0 +1,358 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="">
+
+
+    <meta name="description" content="SpringBoot 框架与短信解决方案以消息形式存在MQ，以子系统（微服务）实时监控ActiveMQ，有要发短信的就是实时通过运营商发出去。
+
+Spring Boot提供更快开发体验；开箱即用...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="">
+            
+	            NO Title!
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/18</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h1 id="SpringBoot-框架与短信解决方案"><a href="#SpringBoot-框架与短信解决方案" class="headerlink" title="SpringBoot 框架与短信解决方案"></a>SpringBoot 框架与短信解决方案</h1><p>以消息形式存在MQ，以子系统（微服务）实时监控ActiveMQ，有要发短信的就是实时通过运营商发出去。</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540690134187.png" alt="1540690134187"><br><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540690147842.png" alt="1540690147842"></p>
+<h2 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h2><p>提供更快开发体验；开箱即用，没有代码生成，不需要xml代码配置；提供常用非功能性特征；更快速使用spring。市场上很多用来开发微服务。</p>
+<h3 id="Spring-Boot-入门小-Demo"><a href="#Spring-Boot-入门小-Demo" class="headerlink" title="Spring Boot 入门小 Demo"></a>Spring Boot 入门小 Demo</h3><p>创建 Maven 工程 springboot_demo（打包方式 jar），这里不需要在toncat中运行，是微服务，tomcat打在依赖jar中。含44种starter，原理依赖传递。<br>在 pom.xml 中添加如下依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">parent</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-parent<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.0.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">parent</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>而这些 jar 包正式我们做开发时需要导入的 jar 包。因为这些 jar 包被我们刚才引入的spring-boot-starter-web 所引用了，所以我们引用 spring-boot-starter-web 后会自动把依赖传递过来。</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540691255740.png" alt="1540691255740"></p>
+<p>热部署，部署完不需要重启服务</p>
+<h4 id="变更-JDK-版本"><a href="#变更-JDK-版本" class="headerlink" title="变更 JDK 版本"></a>变更 JDK 版本</h4><p>我们发现默认情况下工程的 JDK 版本是 1.6 ,而我们通常用使用 1.7 的版本，所以我们需要在pom.xml 中添加以下配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">java.version</span>&gt;</span>1.7<span class="tag">&lt;/<span class="name">java.version</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="引导类"><a href="#引导类" class="headerlink" title="引导类"></a>引导类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.itcast.demo;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="meta">@SpringBootApplication</span><span class="comment">//需要注解申明是启动类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;	<span class="comment">//源  ， 参数</span></span><br><span class="line">        SpringApplication.run(Application.class, args);</span><br><span class="line">        <span class="comment">//Application.class自身类 传递过来args参数</span></span><br><span class="line">        <span class="comment">//可以在这添加beans</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>启动类直接运行即可</p>
+<p>简单解释一下，@SpringBootApplication 其实就是以下三个注解的总和<br>@Configuration： 用于定义一个配置类<br>@EnableAutoConfiguration ：Spring Boot 会自动根据你 jar 包的依赖来自动配置项目。<br>@ComponentScan： 告诉 Spring 哪个 packages 的用注解标识的类 会被 spring 自动扫描并<br>且装入 bean 容器。</p>
+<h4 id="Spring-MVC-实现-Hello-World-输出"><a href="#Spring-MVC-实现-Hello-World-输出" class="headerlink" title="Spring MVC 实现 Hello World 输出"></a>Spring MVC 实现 Hello World 输出</h4><p>新建demo类，默认8080端口</p>
+<p>在浏览器地址栏输入 <a href="http://localhost:8080/info" target="_blank" rel="noopener">http://localhost:8080/info</a> 即可看到运行结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorldController</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/info"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">info</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"HelloWorld"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>设置端口（配置文件在资源目录）在 src/main/resources 下创建 application.properties</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server.port=8088</span><br></pre></td></tr></table></figure>
+<h4 id="env属性文件读取"><a href="#env属性文件读取" class="headerlink" title="env属性文件读取"></a>env属性文件读取</h4><p>在 src/main/resources 下的 application.properties 增加配置，读取如下：<br>url=<a href="http://www.itcast.cn" target="_blank" rel="noopener">http://www.itcast.cn</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span></span><br><span class="line"><span class="keyword">private</span> Environment env;</span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/info"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">info</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"HelloWorld~~"</span> + env.getProperty(<span class="string">"url"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更改配置文件、增加方法或类不能实时生效，添加热部署即可：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-devtools<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>加完依赖后重启下，重启后更改就不需要重启了。</p>
+<h3 id="Spring-Boot-与-ActiveMQ-整合"><a href="#Spring-Boot-与-ActiveMQ-整合" class="headerlink" title="Spring Boot 与 ActiveMQ 整合"></a>Spring Boot 与 ActiveMQ 整合</h3><h4 id="使用内嵌服务"><a href="#使用内嵌服务" class="headerlink" title="使用内嵌服务"></a>使用内嵌服务</h4><p>在 pom.xml 中引入 ActiveMQ 起步依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-activemq<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>创建消息生产者（这里采用的是内置的MQ,不会在我们设置的mq里看到）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">QueueController</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> JmsMessagingTemplate jmsMessagingTemplate;</span><br><span class="line">    <span class="meta">@RequestMapping</span>(<span class="string">"/send"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">send</span><span class="params">(String text)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//convertAndSend转换并发送 ：目标，文本</span></span><br><span class="line">        jmsMessagingTemplate.convertAndSend(<span class="string">"itcast"</span>, text);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建消息消费者</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Consumer</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="meta">@JmsListener</span>(destination = <span class="string">"itcast"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readMessage</span><span class="params">(String text)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"接收到消息："</span> + text);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试：启动服务后，在浏览器执行<br><a href="http://localhost:8088/send.do?text=aaaaa" target="_blank" rel="noopener">http://localhost:8088/send.do?text=aaaaa</a></p>
+<p>内嵌的方便测试不推荐使用。配置使用外部服务，在 src/main/resources 下的 application.properties 增加配置, 指定 ActiveMQ 的地址：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">spring.activemq.broker-url=tcp://192.168.25.135:61616</span><br></pre></td></tr></table></figure>
+<p>运行后，会在 activeMQ 中看到发送的 queue </p>
+<h4 id="发送-Map-信息"><a href="#发送-Map-信息" class="headerlink" title="发送 Map 信息"></a>发送 Map 信息</h4><p>修改 QueueController.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/sendmap"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sendMap</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Map map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    map.put(<span class="string">"mobile"</span>, <span class="string">"13900001111"</span>);</span><br><span class="line">    map.put(<span class="string">"content"</span>, <span class="string">"恭喜获得 10 元代金券"</span>);</span><br><span class="line">    jmsMessagingTemplate.convertAndSend(<span class="string">"itcast_map"</span>,map);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>修改 Consumer.java</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@JmsListener</span>(destination=<span class="string">"itcast_map"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readMap</span><span class="params">(Map map)</span></span>&#123;</span><br><span class="line">    System.out.println(map);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540694881812.png" alt="1540694881812"></p>
+<h3 id="短信微服务"><a href="#短信微服务" class="headerlink" title="短信微服务"></a>短信微服务</h3><p>一个项目做一个微服务就行，跟品优购也没关系，通过异步调用短信微服务再传给阿里大于。</p>
+<h4 id="工程搭建"><a href="#工程搭建" class="headerlink" title="工程搭建"></a>工程搭建</h4><p>创建工程 itcast_sms （JAR 工程），POM 文件引入依赖 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;properties&gt; </span><br><span class="line"> &lt;java.version&gt;1.7&lt;/java.version&gt;</span><br><span class="line"> &lt;/properties&gt;</span><br><span class="line"> &lt;parent&gt;</span><br><span class="line"> &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;1.4.0.RELEASE&lt;/version&gt;</span><br><span class="line"> &lt;/parent&gt; </span><br><span class="line"> &lt;dependencies&gt;</span><br><span class="line"> &lt;dependency&gt;</span><br><span class="line"> &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br><span class="line"> &lt;dependency&gt;</span><br><span class="line"> &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;spring-boot-starter-activemq&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &lt;dependency&gt;</span><br><span class="line"> &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;aliyun-java-sdk-dysmsapi&lt;/artifactId&gt;</span><br><span class="line"> &lt;version&gt;1.0.0-SNAPSHOT&lt;/version&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br><span class="line"> &lt;dependency&gt;</span><br><span class="line"> &lt;groupId&gt;com.aliyun&lt;/groupId&gt;</span><br><span class="line"> &lt;artifactId&gt;aliyun-java-sdk-core&lt;/artifactId&gt;</span><br><span class="line"> &lt;version&gt;3.2.5&lt;/version&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br><span class="line"> &lt;/dependencies&gt;</span><br></pre></td></tr></table></figure>
+<p>不使用阿里大于的不用导大于的包，应导对应的，创建引导：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> cn.itcast.sms;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Application</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        SpringApplication.run(Application.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>创建配置文件 application.properties</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">server.port=9003</span><br><span class="line">spring.activemq.broker-url=tcp://192.168.25.88:61616</span><br><span class="line">accessKeyId=不告诉你</span><br><span class="line">accessKeySecret=不告诉你</span><br></pre></td></tr></table></figure>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540697137545.png" alt="1540697137545"></p>
+<p>换jar依赖</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540697741628.png" alt="1540697741628"><br><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540697793359.png" alt="1540697793359"></p>
+<p>删除阿里大于util（如果有）</p>
+<h2 id="品优购工程搭建"><a href="#品优购工程搭建" class="headerlink" title="品优购工程搭建"></a>品优购工程搭建</h2><h4 id="用户服务接口层"><a href="#用户服务接口层" class="headerlink" title="用户服务接口层"></a>用户服务接口层</h4><p>（1）创建 pinyougou-user-interface（jar）<br>（2）引入 pojo 依赖</p>
+<h4 id="用户服务实现层"><a href="#用户服务实现层" class="headerlink" title="用户服务实现层"></a>用户服务实现层</h4><p>（1）创建 pinyougou-user-service（war）<br>（2）引入 spring dubbox activeMQ 相关依赖，引入依赖（ pinyougou-user-interface<br>pinyougou-dao pinyougou-common），运行端口为 9006<br>（3）添加 web.xml<br>（4）创建 Spring 配置文件 applicationContext-service.xml 和 applicationContent-tx.xml </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dubbo:protocol name=&quot;dubbo&quot; port=&quot;20886&quot; /&gt;</span><br><span class="line"> &lt;dubbo:annotation package=&quot;com.pinyougou.user.service.impl&quot; /&gt; </span><br><span class="line">&lt;dubbo:application name=&quot;pinyougou-user-service&quot;/&gt; </span><br><span class="line">&lt;dubbo:registry address=&quot;zookeeper://192.168.25.135:2181&quot;/</span><br></pre></td></tr></table></figure>
+<h4 id="用户中心-WEB-层"><a href="#用户中心-WEB-层" class="headerlink" title="用户中心 WEB 层"></a>用户中心 WEB 层</h4><p>创建 war 工程 pinyougou-user-web 我们将注册功能放入此工程<br>（1）添加 web.xml<br>（2）引入依赖 pinyougou-user-interface 、spring 相关依赖（参照其它 web 工程）,tomcat 运<br>行端口 9106<br>（3）添加 spring 配置文件<br>（4）拷贝静态原型页面 register.html 及相关资源</p>
+<h5 id="前台比较两次密码输入是否一致"><a href="#前台比较两次密码输入是否一致" class="headerlink" title="前台比较两次密码输入是否一致"></a>前台比较两次密码输入是否一致</h5><p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540710811590.png" alt="1540710811590"></p>
+<p>手机格式校验类<br><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540711736113.png" alt="1540711736113"></p>
+<p>提示log4j没找到，加jar包<br><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540717388817.png" alt="1540717388817"></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/18/Day15_CAS/" class="pre-post btn btn-default" title="">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs"></span>
+        </a>
+    
+    
+        <a href="/2019/07/18/Day13_JMS/" class="next-post btn btn-default" title="">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs"></span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: true,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#SpringBoot-框架与短信解决方案"><span class="toc-text">SpringBoot 框架与短信解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spring-Boot"><span class="toc-text">Spring Boot</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Boot-入门小-Demo"><span class="toc-text">Spring Boot 入门小 Demo</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#变更-JDK-版本"><span class="toc-text">变更 JDK 版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#引导类"><span class="toc-text">引导类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Spring-MVC-实现-Hello-World-输出"><span class="toc-text">Spring MVC 实现 Hello World 输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#env属性文件读取"><span class="toc-text">env属性文件读取</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Spring-Boot-与-ActiveMQ-整合"><span class="toc-text">Spring Boot 与 ActiveMQ 整合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用内嵌服务"><span class="toc-text">使用内嵌服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#发送-Map-信息"><span class="toc-text">发送 Map 信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#短信微服务"><span class="toc-text">短信微服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#工程搭建"><span class="toc-text">工程搭建</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#品优购工程搭建"><span class="toc-text">品优购工程搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#用户服务接口层"><span class="toc-text">用户服务接口层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户服务实现层"><span class="toc-text">用户服务实现层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用户中心-WEB-层"><span class="toc-text">用户中心 WEB 层</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#前台比较两次密码输入是否一致"><span class="toc-text">前台比较两次密码输入是否一致</span></a></li></ol></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

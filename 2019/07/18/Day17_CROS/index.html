@@ -1,0 +1,345 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="">
+
+
+    <meta name="description" content="跨域例如ajax在A网址请求B网址（端口不一样或协议也算不同域）的请求。基于安全机制浏览器一般默认拦截。那怎么才能让其实现呢。
+jsop，主流的是cors，通过服务端跟前段的配置
+cors：在服...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="">
+            
+	            NO Title!
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2019/07/18</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>例如ajax在A网址请求B网址（端口不一样或协议也算不同域）的请求。基于安全机制浏览器一般默认拦截。那怎么才能让其实现呢。</p>
+<p>jsop，主流的是cors，通过服务端跟前段的配置</p>
+<p>cors：在服务器上指定哪个域名是安全的，只需配置即可</p>
+<p>要求：什么是跨域请求，怎么配置</p>
+<p>跨域请求异常报错<img src="https://raw.githubusercontent.com/cwayer/assets/master/1541123477591.png" alt="1541123477591"></p>
+<h2 id="CORS-Cross-origin-resource-sharing"><a href="#CORS-Cross-origin-resource-sharing" class="headerlink" title="CORS(Cross-origin resource sharing)"></a>CORS(Cross-origin resource sharing)</h2><p>Cross-origin resource sharing跨域资源共享</p>
+<p>IE10以下的不兼容cors,cors是w3c制定的一个标准。</p>
+<p>写法，服务端Controoler</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>, <span class="string">"http://localhost:9105"</span>); <span class="comment">//此法方法不需要操作cookie,如果是*代表所有</span></span><br></pre></td></tr></table></figure>
+<p>如果想操作cookie，地址不能为*，要为确定值</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Credentials"</span>, <span class="string">"true"</span>);<span class="comment">//操作cookie</span></span><br></pre></td></tr></table></figure>
+<p>前端异步请求里添加</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;withCredentials&apos;:true&#125;</span><br></pre></td></tr></table></figure>
+<p>具体事例中：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//添加商品到购物车</span></span><br><span class="line">$scope.addToCart = <span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    $http.get(<span class="string">'http://localhost:9107/cart/addGoodsToCartList.do?itemId='</span></span><br><span class="line">         + $scope.sku.id + <span class="string">'&amp;num='</span> + $scope.num,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">'withCredentials'</span>: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    ).success(</span><br><span class="line">        <span class="function"><span class="keyword">function</span> (<span class="params">response</span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        .......</span><br><span class="line">    &#125;</span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h5 id="springMVC-的版本在-4-2-或以上版本"><a href="#springMVC-的版本在-4-2-或以上版本" class="headerlink" title="springMVC 的版本在 4.2 或以上版本"></a>springMVC 的版本在 4.2 或以上版本</h5><p>直接在跨域方法上用注解实现，allowCredentials=”true” 可以缺省</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@CrossOrigin(origins=&quot;http://localhost:9105&quot;,allowCredentials=&quot;true&quot;)</span><br></pre></td></tr></table></figure>
+<p>购物车cart-web引入user-interface依赖，AddressController地址是被cart-web购物车调用，因此写在购物车中</p>
+<p>通过用户ID查询地址，定义在 pinyougou-user-interface中AddressService接口，pinyougou-user-service实现类，控制层</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/findListByLoginUser"</span>)</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;TbAddress&gt; <span class="title">findListByLoginUser</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    String userId = SecurityContextHolder.getContext().getAuthentication().getName();</span><br><span class="line">    <span class="keyword">return</span> addressService.findListByUserId(userId);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>前端直接调用即可，页面调用获取地址列表应该在页面打开后加载。ng-init调用查找地址方法。后端不要忘了给实体类实现序列化接口。</p>
+<h2 id="订单主键的生成"><a href="#订单主键的生成" class="headerlink" title="订单主键的生成"></a>订单主键的生成</h2><p>为什么不用自增，因为在使用数据库分片时候自增会产生重复值</p>
+<p>其他方案：</p>
+<ol>
+<li><p>UUID，不易排序、太长</p>
+</li>
+<li><p>Redis产生自增ID 但是主键生成需要访问Redis，依赖Redis</p>
+</li>
+<li><p>Oracle数据库对象-序列 需要oracle数据库</p>
+</li>
+<li><p>程序自己写算法（保证不重复）</p>
+</li>
+</ol>
+<h3 id="分布式ID生成器"><a href="#分布式ID生成器" class="headerlink" title="分布式ID生成器"></a>分布式ID生成器</h3><p>twitter开源的snowflake算法</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1541145412794.png" alt="1541145412794"></p>
+<p>将64位二进制数，转换为十进制数，按时间戳生成前面一段，毫秒值一样的情况加1。</p>
+<h3 id="保存操作"><a href="#保存操作" class="headerlink" title="保存操作"></a>保存操作</h3><p>服务实现类add方法：</p>
+<ol>
+<li>从缓存提取购物车列表</li>
+<li>循环购物车列表添加订单</li>
+<li>清除缓存中的购物车</li>
+</ol>
+<p>关于雪花util可以新建后使用也可以在bean中配置。构造器部署</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"idWorker"</span> <span class="attr">class</span>=<span class="string">"util.IdWorker"</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 进程 ID --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">index</span>=<span class="string">"0"</span> <span class="attr">value</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!-- 数据中心 ID --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">constructor-arg</span> <span class="attr">index</span>=<span class="string">"1"</span> <span class="attr">value</span>=<span class="string">"0"</span>&gt;</span><span class="tag">&lt;/<span class="name">constructor-arg</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+        <a href="/2019/07/18/Day09_Solr/" class="pre-post btn btn-default" title="">
+            <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+            <span class="hidden-xs"></span>
+        </a>
+    
+    
+        <a href="/2019/07/12/框架/" class="next-post btn btn-default" title="spring cloud zuul网关的作用">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs">spring cloud zuul网关的作用</span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: true,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#跨域"><span class="toc-text">跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CORS-Cross-origin-resource-sharing"><span class="toc-text">CORS(Cross-origin resource sharing)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#springMVC-的版本在-4-2-或以上版本"><span class="toc-text">springMVC 的版本在 4.2 或以上版本</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#订单主键的生成"><span class="toc-text">订单主键的生成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分布式ID生成器"><span class="toc-text">分布式ID生成器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#保存操作"><span class="toc-text">保存操作</span></a></li></ol></li>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>

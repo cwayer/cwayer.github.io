@@ -21,8 +21,9 @@
     <meta name="keywords" content="">
 
 
-    <meta name="description" content="spring cloud zuul网关的作用1是类似于Nginx的网址重定向,但zuul的重定向的一般是整个spring cloud里在Eureka注册中心的模块.
-2、zuul更重要的功能为过...">
+    <meta name="description" content="单点登录（Single Sign On）
+CAS默认账号密码
+12345&lt;property name=&quot;users&quot;&gt;           &lt;map&gt;...">
 
 
 
@@ -34,7 +35,7 @@
     <!--Title-->
 
 
-<title>spring cloud zuul网关的作用 | Hexo</title>
+<title>Hexo</title>
 
 
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -139,9 +140,9 @@
                     <p id="process"></p>
 <article class="post">
     <div class="post-head">
-        <h1 id="spring cloud zuul网关的作用">
+        <h1 id="">
             
-	            spring cloud zuul网关的作用
+	            NO Title!
             
         </h1>
         <div class="post-meta">
@@ -165,7 +166,7 @@
         
         <span class="fa-wrap">
             <i class="fa fa-clock-o"></i>
-            <span class="date-meta">2019/07/12</span>
+            <span class="date-meta">2019/07/18</span>
         </span>
         
     
@@ -175,11 +176,25 @@
     </div>
     
     <div class="post-body post-content">
-        <h3 id="spring-cloud-zuul网关的作用"><a href="#spring-cloud-zuul网关的作用" class="headerlink" title="spring cloud zuul网关的作用"></a>spring cloud zuul网关的作用</h3><p>1是类似于Nginx的网址重定向,但zuul的重定向的一般是整个spring cloud里在Eureka注册中心的模块.</p>
-<p>2、zuul更重要的功能为过滤请求.</p>
-<h3 id="solr如何实现搜索的？"><a href="#solr如何实现搜索的？" class="headerlink" title="solr如何实现搜索的？"></a>solr如何实现搜索的？</h3><p>倒排索引，先抽取文档中词，并建立词与文档id的映射关系，然后查询的时候会根据词去查询文档id，并查询出文档</p>
-<p><em>倒排索引</em>源于实际应用中需要根据属性的值来查找记录。这种<em>索引</em>表中的每一项都包括一个属性值和具有该属性值的各记录的地址。</p>
-<h3 id="solr的索引查询为什么比数据库要快"><a href="#solr的索引查询为什么比数据库要快" class="headerlink" title="solr的索引查询为什么比数据库要快"></a>solr的索引查询为什么比数据库要快</h3><p>Solr使用的是Lucene API实现的全文检索。全文检索本质上是查询的索引。而数据库中并不是所有的字段都建立的索引，更何况如果使用like查询时很大的可能是不使用索引，所以使用solr查询时要比查数据库快</p>
+        <h1 id="单点登录（Single-Sign-On）"><a href="#单点登录（Single-Sign-On）" class="headerlink" title="单点登录（Single Sign On）"></a>单点登录（Single Sign On）</h1><p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540863425839.png" alt="1540863425839"></p>
+<p>CAS默认账号密码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;property name=&quot;users&quot;&gt;</span><br><span class="line">           &lt;map&gt;</span><br><span class="line">               &lt;entry key=&quot;casuser&quot; value=&quot;Mellon&quot;/&gt;</span><br><span class="line">           &lt;/map&gt;</span><br><span class="line">       &lt;/property&gt;</span><br></pre></td></tr></table></figure>
+<p>配置web.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">filter配置</span><br><span class="line">casServerLoginUrl配置cas服务端</span><br><span class="line">还需要serverName配置本机IP传给服务端</span><br><span class="line"></span><br><span class="line">filter-mapping配置过滤路径</span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 该过滤器负责实现 HttpServletRequest 请求的包裹， 比如允许开发者通过</span></span><br><span class="line"><span class="comment">HttpServletRequest 的 getRemoteUser()方法获得 SSO 登录用户的登录名，可选配置。 --&gt;</span> </span><br><span class="line"> <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>CAS HttpServletRequest Wrapper Filter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>配置cas发布配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">原先固定用户无需删除，加入数据源</span><br><span class="line">配置加密器</span><br><span class="line">dbAuthHandle根据用户名把密码列出，其中配密码加密器</span><br><span class="line">更换源</span><br><span class="line">务必添加所需jar包</span><br></pre></td></tr></table></figure>
+<p>将下列标注位置源改成新加的源</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540870593590.png" alt="1540870593590"></p>
+<p>WEB-INF/view/hsp/default/ui里更换登录登出页面</p>
+<p>显示错误信息的，放在页面的合适位置即可</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540882169622.png" alt="1540882169622"></p>
+<p>错误提示是英文。I18N国际化。cas-servlet中改成中文语言包</p>
+<p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540882836062.png" alt="1540882836062"></p>
+<h2 id="SpringSecurity结合CAS"><a href="#SpringSecurity结合CAS" class="headerlink" title="SpringSecurity结合CAS"></a>SpringSecurity结合CAS</h2><p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540886311385.png" alt="1540886311385"></p>
+<p>主要是获取用户角色权限作用，与cas联系到一起</p>
+<h4 id="单点登出"><a href="#单点登出" class="headerlink" title="单点登出"></a>单点登出</h4><p><img src="https://raw.githubusercontent.com/cwayer/assets/master/1540886571633.png" alt="1540886571633"></p>
+<p>真正的单点登录是第一个beans，第二个beans是配置关联关系的。</p>
+<h3 id="集群CAS"><a href="#集群CAS" class="headerlink" title="集群CAS"></a>集群CAS</h3><p>搭建CAS集群，将ticket什么都缓存到redis中</p>
 
     </div>
     
@@ -197,15 +212,15 @@
 
 <div class="article-nav prev-next-wrap clearfix">
     
-        <a href="/2019/07/18/Day17_CROS/" class="pre-post btn btn-default" title="">
+        <a href="/2019/07/18/Day16_Cookie/" class="pre-post btn btn-default" title="">
             <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
             <span class="hidden-xs"></span>
         </a>
     
     
-        <a href="/2019/07/12/maven仓库与tomcat/" class="next-post btn btn-default" title="Maven 软件的安装">
+        <a href="/2019/07/18/Day14_SMS/" class="next-post btn btn-default" title="">
             <span class="hidden-lg">下一篇</span>
-            <span class="hidden-xs">Maven 软件的安装</span><i class="fa fa-angle-right fa-fw"></i>
+            <span class="hidden-xs"></span><i class="fa fa-angle-right fa-fw"></i>
         </a>
     
 </div>
@@ -248,7 +263,7 @@
     <div class="widget">
         <h3 class="title">Table of Contents</h3>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#spring-cloud-zuul网关的作用"><span class="toc-text">spring cloud zuul网关的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solr如何实现搜索的？"><span class="toc-text">solr如何实现搜索的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#solr的索引查询为什么比数据库要快"><span class="toc-text">solr的索引查询为什么比数据库要快</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#单点登录（Single-Sign-On）"><span class="toc-text">单点登录（Single Sign On）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SpringSecurity结合CAS"><span class="toc-text">SpringSecurity结合CAS</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#单点登出"><span class="toc-text">单点登出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#集群CAS"><span class="toc-text">集群CAS</span></a></li></ol></li></ol>
         
     </div>
 </aside>
