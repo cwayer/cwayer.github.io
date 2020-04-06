@@ -1,0 +1,363 @@
+<!DOCTYPE HTML>
+<html lang="">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="Hexo">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.2.3">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="http://yoursite.com">
+    <!--SEO-->
+
+    <meta name="keywords" content="">
+
+
+    <meta name="description" content="安装PHP7.3万事先更新
+1sudo apt-get update
+安装php7.3
+1sudo apt install -y -t buster php7.3-fpm php7.3-curl...">
+
+
+
+<meta name="robots" content="all">
+<meta name="google" content="all">
+<meta name="googlebot" content="all">
+<meta name="verify" content="all">
+
+    <!--Title-->
+
+
+<title>Hexo</title>
+
+
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+
+
+    <link rel="icon" href="/favicon.ico">
+
+    
+
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.5.0">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash">
+
+
+
+
+    
+	<div class="hide">
+		<script type="text/javascript">
+			var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+	</div>
+
+
+
+
+
+
+    
+
+</head>
+
+</html>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+
+<body>
+    <header class="main-header" style="background-image:url(http://snippet.shenliyang.com/img/banner.jpg)">
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title="John Doe">
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+        	<!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+                 <img src="/img/branding.png" alt="Snippet 博客主题" class="img-responsive center-block">
+            
+    	</div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                    <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="http://yoursite.com">Hexo</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/"><i class="fa "></i>Home</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/前端/"><i class="fa "></i>前端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/后端/"><i class="fa "></i>后端</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/categories/工具/"><i class="fa "></i>工具</a>
+                            </li>
+                        
+                            <li role="presentation" class="text-center">
+                                <a href="/archives/"><i class="fa "></i>时间轴</a>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="">
+            
+	            NO Title!
+            
+        </h1>
+        <div class="post-meta">
+    
+        <span class="categories-meta fa-wrap">
+            <i class="fa fa-folder-open-o"></i>
+            
+        </span>
+    
+
+    
+        <span class="fa-wrap">
+            <i class="fa fa-tags"></i>
+            <span class="tags-meta">
+                
+            </span>
+        </span>
+    
+
+    
+        
+        <span class="fa-wrap">
+            <i class="fa fa-clock-o"></i>
+            <span class="date-meta">2020/04/06</span>
+        </span>
+        
+    
+</div>
+            
+            
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="安装PHP7-3"><a href="#安装PHP7-3" class="headerlink" title="安装PHP7.3"></a>安装PHP7.3</h2><p>万事先更新</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<p>安装php7.3</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install -y -t buster php7.3-fpm php7.3-curl php7.3-gd php7.3-intl php7.3-mbstring php7.3-mysql php7.3-imap php7.3-opcache php7.3-sqlite3 php7.3-xml php7.3-xmlrpc php7.3-zip</span><br></pre></td></tr></table></figure>
+<p>查看版本号确定是否成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php -v</span><br></pre></td></tr></table></figure>
+<p>显示如下就成功了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pi@raspberrypi:~ $ php -v</span><br><span class="line">PHP 7.3.4-2 (cli) (built: Apr 13 2019 19:05:48) ( NTS )</span><br><span class="line">Copyright (c) 1997-2018 The PHP Group</span><br><span class="line">Zend Engine v3.3.4, Copyright (c) 1998-2018 Zend Technologies</span><br><span class="line">with Zend OPcache v7.3.4-2, Copyright (c) 1999-2018, by Zend Technologies</span><br></pre></td></tr></table></figure>
+<p>查看php.ini配置文件位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pi@raspberrypi:~ $ php -i|grep &quot;Loaded Configuration File&quot;</span><br><span class="line">Loaded Configuration File =&gt; /etc/php/7.3/cli/php.ini</span><br></pre></td></tr></table></figure>
+<p>输出显示配置文件在/etc/php/7.3/cli/php.ini。注意，实际上配置文件有两个，另外一个在/etc/php/7.3/fpm/php.ini。通过命令行调用php时，会使用第一个配置文件；通过fpm调用php（例如nginx）会使用第二个配置文件。</p>
+<p>php-fpm常用管理命令：<br>开启php-fpm: sudo systemctl start php7.3-fpm<br>关闭php-fpm: sudo systemctl stop php7.3-fpm<br>重启php-fpm: sudo systemctl restart php7.3-fpm<br>编辑php-fpm配置文件： vi /etc/php/7.3/fpm/php-fpm.ini</p>
+<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><p>安装nginx:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+<p>安装完成后，会自动开启nginx。在浏览器输入树莓派的IP地址，可以看到“Welcome to nginx!”。<br>或者使用命令行（输出HTML就ok了）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl 127.0.0.1</span><br></pre></td></tr></table></figure>
+<p>默认的网站根目录：/var/www/html<br>nginx配置文件目录：/etc/nginx/<br>nginx主配置文件位置：/etc/nginx/nginx.conf</p>
+<p>nginx常用管理命令：<br>启动nginx: sudo systemctl start nginx<br>关闭nginx：sudo systemctl stop nginx<br>设置nginx开机启动：sudo systemctl enable nginx</p>
+<h2 id="配置nginx解析php"><a href="#配置nginx解析php" class="headerlink" title="配置nginx解析php"></a>配置nginx解析php</h2><p>编辑配置nginx文件(此文件为ln的链接文件，也可直接编辑原始文件):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /etc/nginx/sites-enabled/default</span><br></pre></td></tr></table></figure>
+<p>找到<code>index</code>指令，添加<code>index.php</code>。修改后：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index index.php index.html index.htm index.nginx-debian.html;</span><br></pre></td></tr></table></figure>
+<p>找到<code># pass PHP scripts to FastCGI server</code>后面的location，删除注释。修改后如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">location ~ \.php$ &#123;</span><br><span class="line">include snippets/fastcgi-php.conf;</span><br><span class="line">#</span><br><span class="line"># # With php-fpm (or other unix sockets):</span><br><span class="line">fastcgi_pass unix:/run/php/php7.3-fpm.sock;</span><br><span class="line"># # With php-cgi (or other tcp sockets):</span><br><span class="line">#fastcgi_pass 127.0.0.1:9000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>保存后重启nginx：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart nginx</span><br></pre></td></tr></table></figure>
+<p>ps: 图方便的话可以把配置文件中 /var/www/html/ 路径改成 /home/pi/www/html ，然后再在pi文件夹里建相应文件夹，重启nginx，如果安装的树莓派系统为桌面版，可直接右键html文件夹属性把“更改内容”属性设置为“任何人”以让你可以在桌面系统更方便操作web文件</p>
+<h2 id="测试Nginx-PHP"><a href="#测试Nginx-PHP" class="headerlink" title="测试Nginx+PHP"></a>测试Nginx+PHP</h2><p>新建index.php文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /var/www/html/index.php</span><br></pre></td></tr></table></figure>
+<p>编辑输入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">phpinfo();</span><br></pre></td></tr></table></figure>
+<p>访问树莓派IP地址显示phpInfo页面就ok了</p>
+<h3 id="Nginx启动问题"><a href="#Nginx启动问题" class="headerlink" title="Nginx启动问题"></a>Nginx启动问题</h3><p>启动nginx服务时如果遇到这个错误 Job for nginx.service failed because the control process exited with error code. See “systemctl stat 可能原因如下：<br>1.nginx配置文件有错误</p>
+<p>运行下面命令查看修改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -t</span><br></pre></td></tr></table></figure>
+<p>之前配置解析php时始终不能成功，只因为default文件最后一行缺少一个“}”</p>
+<p>2.已经启动nginx或者配置文件中的端口号被占用，检查端口是否被占用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -tnlp</span><br></pre></td></tr></table></figure>
+<p>如果端口已经被占用，自己权衡一下是换个端口还是把占用端口的进程杀掉，检查nginx是否已经启动</p>
+<pre><code>ps -aux | grep nginx
+</code></pre><p>如果已经启动使用下面命令干掉即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pkill -9 nginx</span><br></pre></td></tr></table></figure>
+<h2 id="安装MySQL"><a href="#安装MySQL" class="headerlink" title="安装MySQL"></a>安装MySQL</h2><p>这里使用的是MySql分支mariadb:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mariadb-server mariadb-client</span><br></pre></td></tr></table></figure>
+<p>执行数据库初始化安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mysql_secure_installation</span><br></pre></td></tr></table></figure>
+<p>根据提示设置数据库root用户密码、是否允许外网访问等。</p>
+<p>尝试登录数据库:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
+<p>输入上一步设置的密码，发现无法登录，错误提示如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1698 (28000): Access denied for user ‘root’@’localhost’</span><br></pre></td></tr></table></figure>
+<p>原因: 数据库默认使用系统用户登录，需要修改为使用密码登录。<br>解决方案: sudo mysql -u root ，登入数据库后，依次执行以下SQL：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">use mysql #切换到mysql数据库</span><br><span class="line">update user set plugin=&apos;mysql_native_password&apos;; #修改plugin字段</span><br><span class="line">flush privileges; #刷新权限</span><br><span class="line">exit; #退出数据库</span><br></pre></td></tr></table></figure>
+<p>再次使用mysql -u root -p即可通过密码登录数据库，无需root权限执行。</p>
+<p>mariadb配置文件保存在多个位置：<br>/etc/mysql/mariadb.cnf<br>/etc/mysql/mariadb.conf.d/<br>/etc/mysql/conf.d/</p>
+<p>mariadb常用命令：<br>启动mariadb: sudo systemctl start mariadb<br>关闭mariadb：systemctl stop mariadb<br>设置mariadb开机启动：sudo systemctl enable mariadb</p>
+<h3 id="操作MySQL"><a href="#操作MySQL" class="headerlink" title="操作MySQL"></a>操作MySQL</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo /etc/init.d/mysql restart</span><br><span class="line"># mysql的其他操作    status、start、stop、restart</span><br></pre></td></tr></table></figure>
+<h3 id="开启远程访问"><a href="#开启远程访问" class="headerlink" title="开启远程访问"></a>开启远程访问</h3><p>允许远程访问</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf</span><br><span class="line"># 将bind-address这行注释掉</span><br><span class="line"># 或者将127.0.0.1 这个值改为  0.0.0.0</span><br><span class="line"># 然后重启</span><br><span class="line">$ sudo /etc/init.d/mysql restart</span><br></pre></td></tr></table></figure>
+<p>设置账户权限(注意下边root密码改为你自己设置的密码)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br><span class="line">$ 输入密码</span><br><span class="line">MariaDB [(none)]&gt; use mysql;</span><br><span class="line">MariaDB [mysql]&gt; GRANT ALL PRIVILEGES ON *.* TO &apos;root&apos;@&apos;%&apos; IDENTIFIED BY &apos;root的密码&apos; WITH GRANT OPTION;</span><br><span class="line">MariaDB [mysql]&gt; flush privileges;</span><br></pre></td></tr></table></figure>
+<p>然后用Navicat或DBeaver新建MariaDB或MySQL连接即可</p>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/jdyanghang/article/details/102782780" target="_blank" rel="noopener">https://blog.csdn.net/jdyanghang/article/details/102782780</a></p>
+<p><a href="https://www.jianshu.com/p/b258c5e2335b" target="_blank" rel="noopener">https://www.jianshu.com/p/b258c5e2335b</a></p>
+
+    </div>
+    
+    <div class="post-footer">
+        <div>
+            
+                转载声明：商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">Snippet</a>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+        <a href="/2020/04/06/安装贴吧签到报错解决/" class="next-post btn btn-default" title="">
+            <span class="hidden-lg">下一篇</span>
+            <span class="hidden-xs"></span><i class="fa fa-angle-right fa-fw"></i>
+        </a>
+    
+</div>
+
+
+    <div id="comments">
+        
+	
+    <div id="vcomments" class="valine"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="/assets/valine.min.js"></script>
+
+    <script>
+        new Valine({
+            av: AV,
+            el: '#vcomments',
+            appId: 'xOKV9J4UeQAtVkvnJC7Kq2Jn-gzGzoHsz',
+            appKey: 'erIpQac4azoCmgfBB7Dl9maa',
+            placeholder: '说点什么吧',
+            notify: false,
+            verify: true,
+            avatar: 'mm',
+            meta: 'nick,mail'.split(','),
+            pageSize: '10',
+            path: window.location.pathname,
+            lang: ''.toLowerCase()
+        })
+    </script>
+
+
+    </div>
+
+
+
+
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">Table of Contents</h3>
+        
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装PHP7-3"><span class="toc-text">安装PHP7.3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装Nginx"><span class="toc-text">安装Nginx</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置nginx解析php"><span class="toc-text">配置nginx解析php</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试Nginx-PHP"><span class="toc-text">测试Nginx+PHP</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Nginx启动问题"><span class="toc-text">Nginx启动问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装MySQL"><span class="toc-text">安装MySQL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#操作MySQL"><span class="toc-text">操作MySQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#开启远程访问"><span class="toc-text">开启远程访问</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+
+<a id="back-to-top" class="icon-btn hide">
+	<i class="fa fa-chevron-up"></i>
+</a>
+
+
+
+
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+</div>
+
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy; 2017
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<script src="/js/app.js?rev=@@hash"></script>
+
+</body>
+</html>
